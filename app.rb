@@ -8,8 +8,8 @@ class App < Sinatra::Base
 		erb :index
 	end
 
-	get '/requests' do
-		erb :requests
+	get '/tickets' do
+		erb :tickets
 	end
 
 end
