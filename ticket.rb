@@ -1,13 +1,14 @@
+require 'data_mapper'
+
 class Ticket
 
-	attr_reader :name, :created, :resolved, :reason
+	include DataMapper::Resource
 
-	def initialize name, reason
-		@name = name
-		@created = Time.now
-		@resolved = false
-		@reason = reason
-	end
+	property :id, Serial
+	property :name, String
+	property :created, Time, default: Time.now # broken, try to update this
+	property :resolved, Boolean, default: false
+	property :reason, String
 
 	def resolve
 		@resolved = true

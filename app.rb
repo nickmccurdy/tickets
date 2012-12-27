@@ -1,9 +1,19 @@
 require 'sinatra'
+require 'data_mapper'
 require_relative 'ticket'
 
 class App < Sinatra::Base
 
-	queue = []
+	# If you want the logs displayed you have to do this before the call to setup
+	DataMapper::Logger.new($stdout, :debug)
+	# A Sqlite3 connection to a persistent database
+	DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/tickets.db")
+	# Finalize models
+	DataMapper.finalize
+
+	configure :development do
+		DataMapper.auto_upgrade!
+	end
 
 	# Pages
 
@@ -15,8 +25,7 @@ class App < Sinatra::Base
 	post '/' do
 		if params[:name].length > 0
 			@ticket_filed = true
-			@ticket = Ticket.new params[:name], params[:reason]
-			queue << @ticket
+			@ticket = Ticket.create(:name => params[:name], :reason => params[:reason])
 			erb :index
 		else
 			redirect '/'
@@ -24,7 +33,7 @@ class App < Sinatra::Base
 	end
 
 	get '/tickets' do
-		@queue = queue
+		@queue = Ticket.all
 		erb :tickets
 	end
 
