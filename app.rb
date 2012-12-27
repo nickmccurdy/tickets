@@ -10,10 +10,8 @@ class App < Sinatra::Base
 	DataMapper::setup :default, "sqlite3://#{Dir.pwd}/tickets.db"
 	# Finalize models
 	DataMapper.finalize
-
-	configure :development do
-		DataMapper.auto_upgrade!
-	end
+	# Automatically create the ticket table
+	DataMapper.auto_upgrade!
 
 	# Pages
 
