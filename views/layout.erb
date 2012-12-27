@@ -13,11 +13,22 @@
 </head>
 
 <body>
-<div class="container-fluid" id="main">
 
-<%= yield %>
+	<div class="container-fluid" id="main">
 
-</div>
+		<div class="navbar">
+			<div class="navbar-inner">
+				<a class="brand" href="#">Help Queue</a>
+				<ul class="nav">
+					<li><a href="/">Create Ticket</a></li>
+					<li><a href="/tickets">View Tickets</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<%= yield %>
+
+	</div>
 
 <!-- scripts -->
 <script src="/js/scripts.js"></script>
