@@ -1,9 +1,13 @@
 <h2>View Tickets</h2>
 
 <div class="well">
-	<ol>
-		<% for ticket in queue %>
-			<li><%= ticket %></li>
-		<% end %>
-	</ol>
+	<% if queue.length == 0 %>
+		No tickets filed.
+	<% else %>
+		<ol>
+			<% for ticket in queue %>
+				<li><%= ticket %></li>
+			<% end %>
+		</ol>
+	<% end %>
 </div>
