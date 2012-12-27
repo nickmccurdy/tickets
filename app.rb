@@ -8,12 +8,21 @@ class App < Sinatra::Base
 	# Pages
 
 	get '/' do
-		erb :index
+		erb :index, :locals => { :ticket_filed => false }
 	end
 
 	post '/' do
-		queue << Ticket.new(params[:name])
-		"Your ticket has been filed under the name \"#{params[:name]}.\""
+		if params[:name].length > 0
+			ticket = Ticket.new params[:name]
+			queue << ticket
+			erb :index, :locals => {
+				:ticket_filed => true,
+				:name => ticket.name,
+				:created => ticket.created
+			}
+		else
+			redirect '/'
+		end
 	end
 
 	get '/tickets' do

@@ -1,3 +1,11 @@
+<% if ticket_filed %>
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		Your ticket has been filed at <strong><%= created %></strong> under the name
+		<strong><%= name %></strong>.
+	</div>
+<% end %>
+
 <h2>Create Ticket</h2>
 
 <div class="well">
