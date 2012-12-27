@@ -1,8 +1,9 @@
-<% if ticket_filed %>
+<% if @ticket_filed %>
 	<div class="alert alert-success">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		Your ticket has been filed at <strong><%= created %></strong> for
-		<strong><%= reason %></strong> under the name <strong><%= name %></strong>.
+		Your ticket has been filed at <strong><%= @ticket.created %></strong> for
+		<strong><%= @ticket.reason %></strong> under the name
+		<strong><%= @ticket.name %></strong>.
 	</div>
 <% end %>
 

@@ -8,26 +8,24 @@ class App < Sinatra::Base
 	# Pages
 
 	get '/' do
-		erb :index, :locals => { :ticket_filed => false }
+		@ticket_filed = false
+		erb :index
 	end
 
 	post '/' do
 		if params[:name].length > 0
-			ticket = Ticket.new params[:name], params[:reason]
-			queue << ticket
-			erb :index, :locals => {
-				:ticket_filed => true,
-				:name => ticket.name,
-				:created => ticket.created,
-				:reason => ticket.reason
-			}
+			@ticket_filed = true
+			@ticket = Ticket.new params[:name], params[:reason]
+			queue << @ticket
+			erb :index
 		else
 			redirect '/'
 		end
 	end
 
 	get '/tickets' do
-		erb :tickets, :locals => { :queue => queue }
+		@queue = queue
+		erb :tickets
 	end
 
 end
