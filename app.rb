@@ -17,7 +17,7 @@ class App < Sinatra::Base
 	end
 
 	get '/tickets' do
-		erb :tickets
+		erb :tickets, :locals => { :queue => queue }
 	end
 
 end
