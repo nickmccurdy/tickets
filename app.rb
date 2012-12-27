@@ -13,12 +13,13 @@ class App < Sinatra::Base
 
 	post '/' do
 		if params[:name].length > 0
-			ticket = Ticket.new params[:name]
+			ticket = Ticket.new params[:name], params[:reason]
 			queue << ticket
 			erb :index, :locals => {
 				:ticket_filed => true,
 				:name => ticket.name,
-				:created => ticket.created
+				:created => ticket.created,
+				:reason => ticket.reason
 			}
 		else
 			redirect '/'

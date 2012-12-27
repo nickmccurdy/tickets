@@ -1,8 +1,8 @@
 <% if ticket_filed %>
 	<div class="alert alert-success">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
-		Your ticket has been filed at <strong><%= created %></strong> under the name
-		<strong><%= name %></strong>.
+		Your ticket has been filed at <strong><%= created %></strong> for
+		<strong><%= reason %></strong> under the name <strong><%= name %></strong>.
 	</div>
 <% end %>
 
@@ -11,8 +11,18 @@
 <div class="well">
 	<form method="post">
 		<label>Your name</label>
-		<input type="text" name="name" autofocus>
-		<br>
+		<input type="text" name="name" autofocus><br>
+
+		<label>Reason</label>
+		<label class="radio">
+			<input type="radio" name="reason" value="help" checked>
+			Help
+		</label>
+		<label class="radio">
+			<input type="radio" name="reason" value="lab review">
+			Lab review
+		</label>
+
 		<button type="submit" class="btn btn-primary">Create</button>
 	</form>
 </div>

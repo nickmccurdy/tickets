@@ -1,11 +1,12 @@
 class Ticket
 
-	attr_reader :name, :created, :resolved
+	attr_reader :name, :created, :resolved, :reason
 
-	def initialize name
+	def initialize name, reason
 		@name = name
 		@created = Time.now
 		@resolved = false
+		@reason = reason
 	end
 
 	def resolve
@@ -13,7 +14,7 @@ class Ticket
 	end
 
 	def to_s
-		"#{@name} at #{@created} [#{@resolved? 'resolved' : 'pending'}]"
+		"#{@name} at #{@created} for #{@reason} [#{@resolved? 'resolved' : 'pending'}]"
 	end
 
 end
