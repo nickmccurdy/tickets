@@ -31,7 +31,7 @@ class App < Sinatra::Base
 	end
 
 	get '/tickets' do
-		@queue = Ticket.all
+		@tickets = Ticket.all
 		erb :tickets
 	end
 

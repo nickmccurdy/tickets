@@ -1,11 +1,11 @@
 <h2>View Tickets</h2>
 
 <div class="well">
-	<% if @queue.length == 0 %>
+	<% if @tickets.length == 0 %>
 		No tickets filed.
 	<% else %>
 		<ol>
-			<% @queue.each do |ticket| %>
+			<% @tickets.each do |ticket| %>
 				<li><%= ticket %></li>
 			<% end %>
 		</ol>
