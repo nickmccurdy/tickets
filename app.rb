@@ -1,4 +1,5 @@
 require 'sinatra'
+require_relative 'ticket'
 
 class App < Sinatra::Base
 
