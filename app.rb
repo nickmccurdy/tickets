@@ -4,8 +4,6 @@ require_relative 'ticket'
 
 class App < Sinatra::Base
 
-	# If you want the logs displayed you have to do this before the call to setup
-	DataMapper::Logger.new $stdout, :debug
 	# A Sqlite3 connection to a persistent database
 	DataMapper::setup :default, "sqlite3://#{Dir.pwd}/tickets.db"
 	# Set up default property options
