@@ -7,15 +7,15 @@ class Ticket
 	property :id, Serial
 	property :name, String, required: true
 	property :created_at, DateTime
-	property :resolved, Boolean, default: false
+	property :open, Boolean, default: true
 	property :reason, String
 
-	def resolve
-		@resolved = true
+	def close
+		@open = false
 	end
 
 	def to_s
-		"#{@name} at #{@created_at} for #{@reason} [#{@resolved? 'resolved' : 'pending'}]"
+		"#{@name} at #{@created_at} for #{@reason} [#{@open ? 'open' : 'closed'}]"
 	end
 
 end
