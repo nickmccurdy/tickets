@@ -11,7 +11,7 @@ class Ticket
 	property :reason, String
 
 	def close
-		@open = false
+		update open: false
 	end
 
 	def to_s
