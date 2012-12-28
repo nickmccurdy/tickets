@@ -5,7 +5,7 @@ class Ticket
 	include DataMapper::Resource
 
 	property :id, Serial
-	property :name, String
+	property :name, String, required: true
 	property :created_at, DateTime
 	property :resolved, Boolean, default: false
 	property :reason, String
