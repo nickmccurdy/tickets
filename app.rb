@@ -8,6 +8,8 @@ class App < Sinatra::Base
 	DataMapper::Logger.new $stdout, :debug
 	# A Sqlite3 connection to a persistent database
 	DataMapper::setup :default, "sqlite3://#{Dir.pwd}/tickets.db"
+	# Set up default property options
+	DataMapper::Property.required(true)
 	# Finalize models
 	DataMapper.finalize
 	# Automatically create the ticket table
