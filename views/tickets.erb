@@ -4,7 +4,7 @@
 
 	<h3>Open</h3>
 	<% if @tickets.all(open: true).length == 0 %>
-		No tickets are open.
+		<p>No tickets are open.</p>
 	<% else %>
 		<ol>
 			<% @tickets.all(open: true).all(order: [:created_at.asc]).each do |ticket| %>
@@ -15,7 +15,7 @@
 
 	<h3>Closed</h3>
 	<% if @tickets.all(open: false).length == 0 %>
-		No tickets are closed.
+		<p>No tickets are closed.</p>
 	<% else %>
 		<ol>
 			<% @tickets.all(open: false).all(order: [:created_at.desc]).each do |ticket| %>
