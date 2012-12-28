@@ -1,16 +1,31 @@
 <h2>View Tickets</h2>
 
 <div class="well">
-	<% if @tickets.length == 0 %>
-		No tickets filed.
+
+	<h3>Open</h3>
+	<% if @tickets.all(:open => true).length == 0 %>
+		No tickets are open.
 	<% else %>
 		<ol>
-			<% @tickets.each do |ticket| %>
+			<% @tickets.all(:open => true).each do |ticket| %>
 				<li><%= ticket %></li>
 			<% end %>
 		</ol>
-		<button class="btn btn-primary" onclick="document.location.reload()">
-			<i class="icon-refresh icon-white"></i> Reload
-		</button>
 	<% end %>
+
+	<h3>Closed</h3>
+	<% if @tickets.all(:open => false).length == 0 %>
+		No tickets are closed.
+	<% else %>
+		<ol>
+			<% @tickets.all(:open => false).each do |ticket| %>
+				<li><%= ticket %></li>
+			<% end %>
+		</ol>
+	<% end %>
+
+	<button class="btn btn-primary" onclick="document.location.reload()">
+		<i class="icon-refresh icon-white"></i> Reload
+	</button>
+
 </div>

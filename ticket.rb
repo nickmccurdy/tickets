@@ -15,7 +15,7 @@ class Ticket
 	end
 
 	def to_s
-		"#{@name} at #{@created_at} for #{@reason} [#{@open ? 'open' : 'closed'}]"
+		"#{@name} at #{@created_at} for #{@reason}"
 	end
 
 end
