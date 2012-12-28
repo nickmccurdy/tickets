@@ -23,7 +23,7 @@ class App < Sinatra::Base
 	post '/' do
 		if params[:name].length > 0
 			@ticket_filed = true
-			@ticket = Ticket.create(:name => params[:name], :reason => params[:reason])
+			@ticket = Ticket.create name: params[:name], reason: params[:reason]
 			erb :index
 		else
 			redirect '/'
