@@ -2,7 +2,7 @@
 <html lang="en">
 <head><meta charset="utf-8">
 	<!-- basic info -->
-	<title>Help Queue</title>
+	<title>Help Queue<% if request.path_info.include? 'tickets' %> - View Tickets<% end %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css -->
 	<link rel="stylesheet" href="/components/bootstrap.css/css/bootstrap-cosmo.min.css">
