@@ -3,22 +3,22 @@
 <div class="well">
 
 	<h3>Open</h3>
-	<% if @tickets.all(:open => true).length == 0 %>
+	<% if @tickets.all(open: true).length == 0 %>
 		No tickets are open.
 	<% else %>
 		<ol>
-			<% @tickets.all(:open => true).each do |ticket| %>
+			<% @tickets.all(open: true).each do |ticket| %>
 				<li><%= ticket %></li>
 			<% end %>
 		</ol>
 	<% end %>
 
 	<h3>Closed</h3>
-	<% if @tickets.all(:open => false).length == 0 %>
+	<% if @tickets.all(open: false).length == 0 %>
 		No tickets are closed.
 	<% else %>
 		<ol>
-			<% @tickets.all(:open => false).each do |ticket| %>
+			<% @tickets.all(open: false).each do |ticket| %>
 				<li><%= ticket %></li>
 			<% end %>
 		</ol>
