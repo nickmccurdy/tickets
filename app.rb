@@ -16,13 +16,11 @@ class App < Sinatra::Base
 	# Pages
 
 	get '/' do
-		@ticket_filed = false
 		erb :index
 	end
 
 	post '/' do
 		if params[:name].length > 0
-			@ticket_filed = true
 			@ticket = Ticket.create name: params[:name], reason: params[:reason]
 			erb :index
 		else
