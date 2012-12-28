@@ -6,7 +6,7 @@ class Ticket
 
 	property :id, Serial
 	property :name, String
-	property :created, Time, default: Time.now # broken, try to update this
+	property :created_at, DateTime
 	property :resolved, Boolean, default: false
 	property :reason, String
 
@@ -15,7 +15,7 @@ class Ticket
 	end
 
 	def to_s
-		"#{@name} at #{@created} for #{@reason} [#{@resolved? 'resolved' : 'pending'}]"
+		"#{@name} at #{@created_at} for #{@reason} [#{@resolved? 'resolved' : 'pending'}]"
 	end
 
 end
