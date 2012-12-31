@@ -1,4 +1,7 @@
 Tickets::Application.routes.draw do
+  resources :tickets
+
+
   get "home/index"
 
   # The priority is based upon order of creation:
