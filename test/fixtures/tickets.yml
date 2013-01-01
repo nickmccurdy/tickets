@@ -3,9 +3,7 @@
 one:
   owner: MyString
   reason: MyString
-  open: false
 
 two:
   owner: MyString
   reason: MyString
-  open: false
