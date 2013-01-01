@@ -11,3 +11,18 @@
  *= require_self
  *= require_tree .
  */
+
+// First import journal variables
+@import "bootswatch/cosmo/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// Responsive styles go here in case you want them
+@import "bootstrap-responsive";
+
+// And finally bootswatch style itself
+@import "bootswatch/cosmo/bootswatch";
+
+// Whatever application styles you have go last
+/*@import "all";*/
