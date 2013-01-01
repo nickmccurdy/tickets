@@ -11,6 +11,6 @@ class Ticket < ActiveRecord::Base
 	end
 
 	def to_s
-		"#{name} at #{reated_at} for #{reason}"
+		"#{name} at #{created_at} for #{reason}"
 	end
 end
