@@ -6,7 +6,6 @@
     <th>Reason</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @tickets.each do |ticket| %>
@@ -14,7 +13,6 @@
     <td><%= ticket.owner %></td>
     <td><%= ticket.reason %></td>
     <td><%= link_to 'Show', ticket %></td>
-    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
     <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
