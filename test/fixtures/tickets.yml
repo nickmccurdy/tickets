@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  owner: MyString
+  computer: MyString
   reason: MyString
 
 two:
-  owner: MyString
+  computer: MyString
   reason: MyString

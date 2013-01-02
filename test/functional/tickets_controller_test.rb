@@ -18,7 +18,7 @@ class TicketsControllerTest < ActionController::TestCase
 
   test "should create ticket" do
     assert_difference('Ticket.count') do
-      post :create, ticket: { owner: @ticket.owner, reason: @ticket.reason }
+      post :create, ticket: { computer: @ticket.computer, reason: @ticket.reason }
     end
 
     assert_redirected_to ticket_path(assigns(:ticket))
@@ -38,7 +38,7 @@ class TicketsControllerTest < ActionController::TestCase
 
   test "should update ticket" do
     assert_raise ActionController::RoutingError do
-      put :update, id: @ticket, ticket: { owner: @ticket.owner, reason: @ticket.reason }
+      put :update, id: @ticket, ticket: { computer: @ticket.computer, reason: @ticket.reason }
       assert_redirected_to ticket_path(assigns(:ticket))
     end
   end

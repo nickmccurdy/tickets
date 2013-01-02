@@ -1,8 +1,8 @@
 class Ticket < ActiveRecord::Base
-	attr_accessible :owner, :reason
+	attr_accessible :computer, :reason
 
-	validates :owner, :presence => true
-	# Try to also ensure that the name is not empty
+	validates :computer, presence: true
+	# Try to also ensure that the computer number is not empty
 
 	def to_s
 		"#{name} at #{created_at} for #{reason}"
