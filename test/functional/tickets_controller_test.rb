@@ -30,13 +30,17 @@ class TicketsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @ticket
-    assert_response :success
+    assert_raise ActionController::RoutingError do
+      get :edit, id: @ticket
+      assert_response :success
+    end
   end
 
   test "should update ticket" do
-    put :update, id: @ticket, ticket: { owner: @ticket.owner, reason: @ticket.reason }
-    assert_redirected_to ticket_path(assigns(:ticket))
+    assert_raise ActionController::RoutingError do
+      put :update, id: @ticket, ticket: { owner: @ticket.owner, reason: @ticket.reason }
+      assert_redirected_to ticket_path(assigns(:ticket))
+    end
   end
 
   test "should destroy ticket" do
