@@ -25,8 +25,10 @@ class TicketsControllerTest < ActionController::TestCase
   end
 
   test "should show ticket" do
-    get :show, id: @ticket
-    assert_response :success
+    assert_raise ActionController::RoutingError do
+      get :show, id: @ticket
+      assert_response :success
+    end
   end
 
   test "should get edit" do

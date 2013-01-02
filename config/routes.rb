@@ -1,5 +1,5 @@
 Tickets::Application.routes.draw do
-  resources :tickets, except: [:edit, :update], path: ''
+  resources :tickets, path: '', except: [:show, :edit, :update]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
