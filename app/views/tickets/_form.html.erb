@@ -21,9 +21,16 @@
     </div>
 
     <div class="control-group">
-      <label class="control-label" for="ticket-reason">Reason</label>
+      <label class="control-label">Reasons</label>
       <div class="controls">
-        <input id="ticket-reason" name="ticket[reason]" type="text" size="30" placeholder="Reason">
+        <label class="radio">
+          <input type="radio" name="ticket[reason]" value="help" checked>
+          help
+        </label>
+        <label class="radio">
+          <input type="radio" name="ticket[reason]" value="lab completed">
+          lab completed
+        </label>
       </div>
     </div>
 
