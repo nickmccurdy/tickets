@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  computer: MyString
-  reason: MyString
+  computer: 1
+  reason: help
 
 two:
-  computer: MyString
-  reason: MyString
+  computer: 21
+  reason: completed lab
