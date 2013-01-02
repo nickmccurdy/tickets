@@ -6,7 +6,6 @@
     <th>Reason</th>
     <th>Elapsed time</th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @tickets.each do |ticket| %>
@@ -14,9 +13,6 @@
     <td><%= ticket.computer %></td>
     <td><%= ticket.reason %></td>
     <td><%= distance_of_time_in_words_to_now ticket.created_at %></td>
-    <td><%= link_to ticket, class: 'btn btn-primary' do %>
-      <i class="icon-eye-open icon-white"></i> Show
-    <% end %></td>
     <td><%= link_to ticket, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } do %>
       <i class="icon-remove icon-white"></i> Destroy
     <% end %></td>
