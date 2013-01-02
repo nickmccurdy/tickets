@@ -11,13 +11,28 @@
     </div>
   <% end %>
 
-  <%= f.label :owner %>
-  <%= f.text_field :owner %>
+  <div class="form-horizontal">
 
-  <%= f.label :reason %>
-  <%= f.text_field :reason %>
+    <div class="control-group">
+      <label class="control-label" for="ticket-owner">Owner</label>
+      <div class="controls">
+        <input id="ticket-owner" name="ticket[owner]" type="text" size="30" placeholder="Owner">
+      </div>
+    </div>
 
-  <br />
-  <%= f.submit %>
+    <div class="control-group">
+      <label class="control-label" for="ticket-reason">Reason</label>
+      <div class="controls">
+        <input id="ticket-reason" name="ticket[reason]" type="text" size="30" placeholder="Reason">
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <button name="commit" type="submit" class="btn btn-primary">Create ticket</button>
+      </div>
+    </div>
+
+  </div>
 
 <% end %>
