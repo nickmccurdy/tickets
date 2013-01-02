@@ -11,15 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
-  </div>
-  <div class="field">
-    <%= f.label :reason %><br />
-    <%= f.text_field :reason %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.label :owner %>
+  <%= f.text_field :owner %>
+
+  <%= f.label :reason %>
+  <%= f.text_field :reason %>
+
+  <br />
+  <%= f.submit %>
+
 <% end %>
