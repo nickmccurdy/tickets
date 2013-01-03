@@ -9,17 +9,17 @@
  * compiled file, but it's generally better to create a new file per style scope.
  */
 
-// First import journal variables
+// Cosmo variables
 @import "bootswatch/cosmo/variables";
 
-// Then bootstrap itself
+// Bootstrap itself
 @import "bootstrap";
 
-// Responsive styles go here in case you want them
+// Bootstrap responsive styles
 @import "bootstrap-responsive";
 
-// And finally bootswatch style itself
+// Cosmo itself
 @import "bootswatch/cosmo/bootswatch";
 
-// Whatever application styles you have go last
+// Application styles
 @import "base";
