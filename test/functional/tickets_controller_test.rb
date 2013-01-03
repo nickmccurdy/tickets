@@ -18,7 +18,10 @@ class TicketsControllerTest < ActionController::TestCase
 
 	test "should create ticket" do
 		assert_difference('Ticket.count') do
-			post :create, ticket: { computer: @ticket.computer, reason: @ticket.reason }
+			# Note that using fixtures for the new ticket's data won't work here,
+			# since that fixture's data is already in the database, causing validation
+			# errors
+			post :create, ticket: { computer: 5, reason: 'help' }
 		end
 
 		assert_redirected_to ticket_path(assigns(:ticket))
