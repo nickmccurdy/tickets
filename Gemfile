@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Important stuff
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.10'
 gem 'sqlite3'
 gem 'thin'
 
