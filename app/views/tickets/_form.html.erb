@@ -13,25 +13,29 @@
 
 	<div class="form-horizontal">
 
-		<div class="control-group">
-			<label class="control-label" for="ticket-computer">Computer #</label>
-			<div class="controls">
-				<input id="ticket-computer" name="ticket[computer]" type="number" min="1" max="21" maxlength="2" placeholder="1-21" required autofocus>
-			</div>
-		</div>
+		<div class="well well-small">
 
-		<div class="control-group">
-			<label class="control-label">Reason</label>
-			<div class="controls">
-				<label class="radio">
-					<input type="radio" name="ticket[reason]" value="help" checked>
-					help
-				</label>
-				<label class="radio">
-					<input type="radio" name="ticket[reason]" value="lab completed">
-					lab completed
-				</label>
+			<div class="control-group">
+				<label class="control-label" for="ticket-computer">Computer #</label>
+				<div class="controls">
+					<input id="ticket-computer" name="ticket[computer]" type="number" min="1" max="21" maxlength="2" placeholder="1-21" required autofocus>
+				</div>
 			</div>
+
+			<div class="control-group">
+				<label class="control-label">Reason</label>
+				<div class="controls">
+					<label class="radio">
+						<input type="radio" name="ticket[reason]" value="help" checked>
+						help
+					</label>
+					<label class="radio">
+						<input type="radio" name="ticket[reason]" value="lab completed">
+						lab completed
+					</label>
+				</div>
+			</div>
+
 		</div>
 
 		<div class="control-group">
