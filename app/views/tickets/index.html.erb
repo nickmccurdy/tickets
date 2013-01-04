@@ -7,17 +7,21 @@
 		<th>Elapsed time</th>
 	</tr>
 
-<% @tickets.each do |ticket| %>
-	<tr>
-		<td><%= ticket.computer %></td>
-		<td><%= ticket.reason %></td>
-		<td>
-			<%= distance_of_time_in_words_to_now ticket.created_at %>
-			<%= link_to ticket, class: 'btn btn-danger pull-right', method: :delete, data: { confirm: 'Are you sure?' } do %>
-				<i class="icon-remove icon-white"></i> Destroy
-			<% end %>
-		</td>
-	</tr>
+<% if @tickets.length > 0 %>
+	<% @tickets.each do |ticket| %>
+		<tr>
+			<td><%= ticket.computer %></td>
+			<td><%= ticket.reason %></td>
+			<td>
+				<%= distance_of_time_in_words_to_now ticket.created_at %> ago
+				<%= link_to ticket, class: 'btn btn-danger pull-right', method: :delete, data: { confirm: 'Are you sure?' } do %>
+					<i class="icon-remove icon-white"></i> Destroy
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+<% else %>
+	<tr><td class="muted" colspan="3">No tickets are open.</td></tr>
 <% end %>
 </table>
 
