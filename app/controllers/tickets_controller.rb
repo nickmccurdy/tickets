@@ -80,4 +80,10 @@ class TicketsController < ApplicationController
 			format.json { head :no_content }
 		end
 	end
+
+	def destroy_all
+		Ticket.delete_all
+		#flash[:notice] = "You have removed all results!"
+		redirect_to '/list'
+	end
 end

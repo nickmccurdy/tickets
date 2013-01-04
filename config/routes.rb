@@ -6,7 +6,11 @@ Tickets::Application.routes.draw do
 
 	root :to => 'tickets#new'
 
-	resources :tickets, path: '', except: [:show, :edit, :update]
+	resources :tickets, path: '', except: [:show, :edit, :update] do
+		collection do
+			get 'destroy_all'
+		end
+	end
 
 	# The priority is based upon order of creation:
 	# first created -> highest priority.
