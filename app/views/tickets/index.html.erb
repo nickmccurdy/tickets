@@ -1,5 +1,6 @@
 <table class="table table-striped table-bordered table-hover">
 	<tr>
+		<th>Name</th>
 		<th>Computer #</th>
 		<th>Reason</th>
 		<th>Elapsed time <span class="muted not-bold">(oldest to newest)</span></th>
@@ -8,6 +9,7 @@
 <% if @tickets.length > 0 %>
 	<% @tickets.each do |ticket| %>
 		<tr>
+			<td><%= ticket.name %></td>
 			<td><%= ticket.computer %></td>
 			<td><%= ticket.reason %></td>
 			<td>

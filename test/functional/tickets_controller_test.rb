@@ -21,7 +21,7 @@ class TicketsControllerTest < ActionController::TestCase
 			# Note that using fixtures for the new ticket's data won't work here,
 			# since that fixture's data is already in the database, causing validation
 			# errors
-			post :create, ticket: { computer: 5, reason: 'help' }
+			post :create, ticket: { name: 'Fred', computer: 5, reason: 'help' }
 		end
 
 		assert_redirected_to ticket_path(assigns(:ticket))
@@ -43,7 +43,7 @@ class TicketsControllerTest < ActionController::TestCase
 
 	test "should update ticket" do
 		assert_raise ActionController::RoutingError do
-			put :update, id: @ticket, ticket: { computer: @ticket.computer, reason: @ticket.reason }
+			put :update, id: @ticket, ticket: { name: @ticket.name, computer: @ticket.computer, reason: @ticket.reason }
 			assert_redirected_to ticket_path(assigns(:ticket))
 		end
 	end
