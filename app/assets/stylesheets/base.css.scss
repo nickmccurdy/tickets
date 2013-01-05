@@ -6,3 +6,11 @@
 .not-bold {
 	font-weight: normal;
 }
+
+#ticket-list tr:nth-child(2) {
+	font-weight: bold;
+}
+
+#ticket-list .btn {
+	font-weight: normal;
+}
