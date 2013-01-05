@@ -1,5 +1,6 @@
 <li <%= 'class="active"'.html_safe if request.path == path %>>
 	<a href="<%= path %>">
-		<i class="icon-<%= icon %>"></i> <%= name %>
+		<% unless icon.nil? %><i class="icon-<%= icon %>"></i><% end %>
+		<%= name %>
 	</a>
 </li>
