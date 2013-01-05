@@ -3,6 +3,6 @@ class Ticket < ActiveRecord::Base
 
 	default_scope order 'created_at ASC'
 
-	validates :computer, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 21 }, uniqueness: { message: 'only one ticket per computer is allowed' }
+	validates :computer, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 21 }, uniqueness: true
 	validates :reason, presence: true, inclusion: ['help', 'lab completed']
 end
