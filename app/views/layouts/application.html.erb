@@ -19,8 +19,8 @@
 			<div class="navbar-inner">
 				<a class="brand" href="/">Tickets</a>
 				<ul class="nav">
-					<%= render partial: 'navbar_link', locals: { path: '/', name: 'New ticket', icon: 'plus' } %>
-					<%= render partial: 'navbar_link', locals: { path: '/list', name: 'All tickets', icon: 'list' } %>
+					<%= navbar_link 'New ticket', '/', 'plus' %>
+					<%= navbar_link 'All tickets', '/list', 'list' %>
 				</ul>
 			</div>
 		</div>
