@@ -1,4 +1,4 @@
-<li <%= 'class="active"'.html_safe if request.path == path %>>
+<li <% if path_contains? path %>class="active"<% end %>>
 	<a href="<%= path %>">
 		<% unless icon.nil? %><i class="icon-<%= icon %>"></i><% end %>
 		<%= name %>
