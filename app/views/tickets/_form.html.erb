@@ -38,26 +38,15 @@
 				</div>
 			</div>
 
-			<div class="control-group">
-				<label class="control-label">Reason</label>
-				<div class="controls">
-					<label class="radio">
-						<input type="radio" name="ticket[reason]" value="help" checked>
-						help
-					</label>
-					<label class="radio">
-						<input type="radio" name="ticket[reason]" value="lab completed">
-						lab completed
-					</label>
-				</div>
-			</div>
-
 		</div>
 
 		<div class="control-group">
 			<div class="controls">
-				<button name="commit" type="submit" class="btn btn-primary">
-					<i class="icon-ok"></i> Create ticket
+				<button name="ticket[reason]" value="help" type="submit" class="btn btn-primary">
+					<i class="icon-ok"></i> Create help ticket
+				</button>
+				<button name="ticket[reason]" value="lab completed" type="submit" class="btn btn-primary">
+					<i class="icon-ok"></i> Create lab completed ticket
 				</button>
 			</div>
 		</div>
