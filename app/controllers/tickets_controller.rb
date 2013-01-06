@@ -1,5 +1,5 @@
 class TicketsController < ApplicationController
-	before_filter :authenticate, except: [:new, :create]
+	before_filter :authenticate, except: [:new, :create] unless Rails.env == 'test'
 
 	# GET /tickets
 	# GET /tickets.json
