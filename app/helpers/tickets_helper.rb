@@ -1,7 +1,7 @@
 module TicketsHelper
 
-	def path_contains? str
-		request.path.include? str
+	def path_is? str
+		request.path == str
 	end
 
 	def navbar_link name, path, icon=nil

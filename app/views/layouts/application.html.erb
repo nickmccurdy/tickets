@@ -2,7 +2,7 @@
 <html lang="en">
 <head><meta charset="utf-8">
 	<!-- basic info -->
-	<title>Tickets<% if path_contains? 'list' %> - All<% end %></title>
+	<title>Tickets<% if path_is? '/list' %> - All<% end %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css -->
 	<%= stylesheet_link_tag    "application", :media => "all" %>
