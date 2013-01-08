@@ -1,15 +1,6 @@
 <%= form_for(@ticket) do |f| %>
 
-	<% if @ticket.errors.any? %>
-		<ul>
-		<% @ticket.errors.full_messages.each do |msg| %>
-			<div class="alert alert-error">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong>Error:</strong> <%= msg %>
-			</div>
-		<% end %>
-		</ul>
-	<% end %>
+	<%= render 'errors' %>
 
 	<% if false #if success %>
 		<div class="alert alert-success">
