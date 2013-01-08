@@ -42,11 +42,11 @@ class TicketsController < ApplicationController
 	# POST /tickets
 	# POST /tickets.json
 	def create
-		@ticket = Ticket.new(params[:ticket])
+		flash[:ticket] = @ticket = Ticket.new(params[:ticket])
 
 		respond_to do |format|
 			if @ticket.save
-				format.html { redirect_to @ticket, notice: 'Ticket was successfully created.' }
+				format.html { redirect_to '/' }
 				format.json { render json: @ticket, status: :created, location: @ticket }
 			else
 				format.html { render action: "new" }
@@ -78,7 +78,7 @@ class TicketsController < ApplicationController
 		@ticket.destroy
 
 		respond_to do |format|
-			format.html { redirect_to tickets_url }
+			format.html { redirect_to '/list' }
 			format.json { head :no_content }
 		end
 	end

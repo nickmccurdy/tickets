@@ -2,14 +2,14 @@
 
 	<%= render 'errors' %>
 
-	<% if false #if success %>
+	<% if defined? flash[:ticket].valid? %>
 		<div class="alert alert-success">
 			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			Your ticket has been filed at <strong><%= @ticket.created_at %></strong>
-			for <strong><%= @ticket.reason %></strong> at computer
-			<strong><%= @ticket.computer %></strong>
+			Your ticket has been filed at <strong><%= flash[:ticket].created_at %></strong>
+			for <strong><%= flash[:ticket].reason %></strong> at computer
+			<strong><%= flash[:ticket].computer %></strong>
 		</div>
-	<% end%>
+	<% end %>
 
 	<div class="form-horizontal">
 
