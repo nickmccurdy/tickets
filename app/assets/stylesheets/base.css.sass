@@ -1,33 +1,42 @@
+/* all pages */
+
+#main
+	max-width: 600px
+	margin: 25px auto
+		bottom: 0px
+
 @media (max-width: 480px)
 	body, #main
 		margin: 0px !important
 		padding: 0px
 
-#main
-	max-width: 600px
-	margin: 25px auto
-	margin-bottom: 0px
-
-#new_ticket .btn
-	margin-top: 5px
-
 .not-bold
 	font-weight: normal
 
-#ticket-list tr:nth-child(1) th
-	background-color: #ddd
+/* new ticket page */
 
-#ticket-list tr:nth-child(1) th .muted
-	color: #888
+#new_ticket
 
-.form-horizontal .control-group:last-child
-	margin-bottom: 0px
+	#ticket-name
+		width: 150px
 
-#ticket-list .btn
-	font-weight: normal
+	#ticket-computer
+		width: 50px
 
-#ticket-name
-	width: 150px
+	.form-horizontal .control-group:last-child
+		margin-bottom: 0px
 
-#ticket-computer
-	width: 50px
+	.btn
+		margin-top: 5px
+
+/* all tickets page */
+
+#ticket-list
+
+	tr:nth-child(1) th
+		background-color: #ddd
+		.muted
+			color: #888
+
+	.btn
+		font-weight: normal
