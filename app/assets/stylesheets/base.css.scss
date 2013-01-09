@@ -19,8 +19,16 @@
 	font-weight: normal;
 }
 
-#ticket-list tr:nth-child(2) {
-	font-weight: bold;
+#ticket-list tr:nth-child(1) th {
+	background-color: #ddd;
+}
+
+#ticket-list tr:nth-child(1) th .muted {
+	color: #888;
+}
+
+.form-horizontal .control-group:last-child {
+	margin-bottom: 0px;
 }
 
 #ticket-list .btn {
