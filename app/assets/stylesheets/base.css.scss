@@ -1,6 +1,18 @@
+@media (max-width: 480px) {
+	body, #main {
+		margin: 0px !important;
+		padding: 0px;
+	}
+}
+
 #main {
 	max-width: 600px;
 	margin: 25px auto;
+	margin-bottom: 0px;
+}
+
+#new_ticket .btn {
+	margin-top: 5px;
 }
 
 .not-bold {
