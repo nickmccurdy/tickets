@@ -24,7 +24,7 @@ class TicketsControllerTest < ActionController::TestCase
 			post :create, ticket: { name: 'Fred', computer: 5, reason: 'help' }
 		end
 
-		assert_redirected_to ticket_path(assigns(:ticket))
+		assert_redirected_to '/'
 	end
 
 	test "should show ticket" do
@@ -53,6 +53,6 @@ class TicketsControllerTest < ActionController::TestCase
 			delete :destroy, id: @ticket
 		end
 
-		assert_redirected_to tickets_path
+		assert_redirected_to '/list'
 	end
 end
