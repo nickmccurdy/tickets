@@ -5,20 +5,8 @@
 	</div>
 <% end %>
 
-<p>
-	<b>Name:</b>
-	<%= @ticket.name %>
-</p>
-
-<p>
-	<b>Computer #:</b>
-	<%= @ticket.computer %>
-</p>
-
-<p>
-	<b>Reason:</b>
-	<%= @ticket.reason %>
-</p>
-
+<%= show_attribute 'Name', @ticket.name %>
+<%= show_attribute 'Computer #', @ticket.computer %>
+<%= show_attribute 'Reason', @ticket.reason %>
 
 <%= link_to 'Back', tickets_path %>

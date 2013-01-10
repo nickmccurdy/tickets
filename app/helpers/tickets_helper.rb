@@ -12,4 +12,11 @@ module TicketsHelper
 		}
 	end
 
+	def show_attribute name, value
+		render partial: 'show_attribute', locals: {
+			name: name,
+			value: value
+		}
+	end
+
 end
