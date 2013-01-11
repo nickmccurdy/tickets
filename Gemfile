@@ -31,6 +31,11 @@ group :test do
 	gem 'simplecov', require: false
 end
 
+group :development do
+	gem 'binding_of_caller'
+	gem 'better_errors'
+end
+
 gem 'jquery-rails'
 gem 'browser_details'
 
