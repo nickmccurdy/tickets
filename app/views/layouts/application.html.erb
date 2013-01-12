@@ -22,6 +22,19 @@
 					<%= navbar_link 'New', '/', 'plus' %>
 					<%= navbar_link 'All', '/list', 'list' %>
 				</ul>
+
+				<div id="list-buttons" class="pull-right">
+
+					<button class="btn btn-primary" onclick="document.location.reload()">
+						<i class="icon-refresh"></i> Reload
+					</button>
+
+					<a href="/destroy_all" class="btn btn-danger" data-confirm="Are you sure?" rel="nofollow">
+						<i class="icon-remove"></i> Destroy all
+					</a>
+
+				</div>
+
 			</div>
 		</div>
 
