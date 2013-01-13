@@ -35,7 +35,7 @@ GEM
     binding_of_caller (0.6.8)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
-    bootswatch-rails (0.2.0)
+    bootswatch-rails (0.3.0)
       railties (>= 3.1)
     browser_details (0.0.4)
       useragent (>= 0.4)
@@ -133,7 +133,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 2.2.2.0)
-  bootswatch-rails (~> 0.2.0)
+  bootswatch-rails (~> 0.3.0)
   browser_details
   coffee-rails (~> 3.2.1)
   font-awesome-sass-rails (~> 3.0.0.0)

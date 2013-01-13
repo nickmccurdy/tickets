@@ -17,7 +17,7 @@ end
 group :assets do
 	gem 'sass-rails',   '~> 3.2.3'
 	gem 'bootstrap-sass', '~> 2.2.2.0'
-	gem 'bootswatch-rails', '~> 0.2.0'
+	gem 'bootswatch-rails', '~> 0.3.0'
 	gem 'font-awesome-sass-rails', '~> 3.0.0.0'
 	gem 'coffee-rails', '~> 3.2.1'
 
