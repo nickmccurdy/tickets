@@ -17,6 +17,7 @@
 
 		<div class="navbar navbar-inverse">
 			<div class="navbar-inner">
+
 				<a class="brand" href="/">Tickets</a>
 				<ul class="nav">
 					<%= navbar_link 'New', '/', 'plus' %>
@@ -25,13 +26,13 @@
 
 				<div id="list-buttons" class="pull-right">
 
-					<button class="btn btn-primary" onclick="document.location.reload()">
-						<i class="icon-refresh"></i> Reload
-					</button>
-
 					<a href="/destroy_all" class="btn btn-danger" data-confirm="Are you sure?" rel="nofollow">
 						<i class="icon-remove"></i> Destroy all
 					</a>
+
+					<button class="btn btn-inverse" onclick="document.location.reload()">
+						<i class="icon-refresh"></i> Reload
+					</button>
 
 				</div>
 
