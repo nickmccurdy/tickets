@@ -2,14 +2,14 @@ source 'https://rubygems.org'
 
 # Important stuff
 gem 'rails', '~> 3.2'
-gem 'thin'
+gem 'thin', '~> 1.5'
 
 # Database
 group :production do
-	gem 'pg'
+	gem 'pg', '~> 0.14'
 end
 group :development, :test do
-	gem 'sqlite3'
+	gem 'sqlite3', '~> 1.3'
 end
 
 # Gems used only for assets and not required
@@ -28,28 +28,28 @@ group :assets do
 end
 
 group :test do
-	gem 'simplecov', require: false
+	gem 'simplecov', '~> 0.7', require: false
 end
 
 group :development do
-	gem 'binding_of_caller'
-	gem 'better_errors'
+	gem 'binding_of_caller', '~> 0.6'
+	gem 'better_errors', '~> 0.3'
 end
 
-gem 'jquery-rails'
-gem 'browser_details'
+gem 'jquery-rails', '~> 2.1'
+gem 'browser_details', '~> 0.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0'
 
 # To use Jbuilder templates for JSON
-# gem 'jbuilder'
+# gem 'jbuilder', '~> 1.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+# gem 'unicorn', '~> 4.5'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+# gem 'capistrano', '~> 2.14'
 
 # To use debugger
-# gem 'debugger'
+# gem 'debugger', '~> 1.2'
