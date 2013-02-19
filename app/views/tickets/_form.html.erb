@@ -1,6 +1,6 @@
-<%= form_for(@ticket) do |f| %>
+<%= form_for(ticket) do |f| %>
 
-	<%= render 'errors' %>
+	<%= render 'errors', ticket: @ticket %>
 
 	<%= render 'success' %>
 
