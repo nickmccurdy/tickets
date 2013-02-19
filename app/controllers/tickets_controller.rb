@@ -49,7 +49,7 @@ class TicketsController < ApplicationController
 				format.html { redirect_to '/' }
 				format.json { render json: @ticket, status: :created, location: @ticket }
 			else
-				format.html { render action: "new" }
+				format.html { render "new" }
 				format.json { render json: @ticket.errors, status: :unprocessable_entity }
 			end
 		end
@@ -65,7 +65,7 @@ class TicketsController < ApplicationController
 				format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
 				format.json { head :no_content }
 			else
-				format.html { render action: "edit" }
+				format.html { render "edit" }
 				format.json { render json: @ticket.errors, status: :unprocessable_entity }
 			end
 		end
