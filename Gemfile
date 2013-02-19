@@ -39,6 +39,10 @@ end
 gem 'jquery-rails', '~> 2.1'
 gem 'browser_details', '~> 0.0'
 
+gem 'yard'
+gem 'yard-activerecord'
+gem 'redcarpet'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0'
 
