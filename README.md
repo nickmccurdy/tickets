@@ -24,7 +24,7 @@ You will want to open up a terminal for this.
 ### Tickets (completed)
 - Tickets are stored in a persistent database, which does not need to store any other data
 - Tickets are destroyed when they are resolved, and cannot be modified
-- Tickets have the following attributes, which are all required to be existant and non-empty
+- Tickets have the following attributes, which are all required to be existent and non-empty
   - __name__ (string): the name of the person who created the ticket
   - __computer__ (integer, unique): the number of the computer that the ticket was created for
   - __reason__ (string): the reason for the ticket, chosen via two submit buttons (reason must be from a list of two valid strings)
