@@ -1,47 +1,47 @@
 <%= form_for(ticket) do |f| %>
 
-	<!-- display errors (if needed) -->
-	<%= render 'errors', ticket: ticket %>
+  <!-- display errors (if needed) -->
+  <%= render 'errors', ticket: ticket %>
 
-	<!-- display success notices (if needed) -->
-	<%= render 'success' %>
+  <!-- display success notices (if needed) -->
+  <%= render 'success' %>
 
-	<!-- Ticket edit/creation form -->
-	<div class="form-horizontal" id="ticket-form">
+  <!-- Ticket edit/creation form -->
+  <div class="form-horizontal" id="ticket-form">
 
-		<div class="well">
+    <div class="well">
 
-			<!-- name field -->
-			<div class="control-group">
-				<label class="control-label" for="ticket-name">Name</label>
-				<div class="controls">
-					<input id="ticket-name" name="ticket[name]" type="text" placeholder="Your name" required autofocus>
-				</div>
-			</div>
+      <!-- name field -->
+      <div class="control-group">
+        <label class="control-label" for="ticket-name">Name</label>
+        <div class="controls">
+          <input id="ticket-name" name="ticket[name]" type="text" placeholder="Your name" required autofocus>
+        </div>
+      </div>
 
-			<!-- computer # field -->
-			<div class="control-group">
-				<label class="control-label" for="ticket-computer">Computer #</label>
-				<div class="controls">
-					<input id="ticket-computer" name="ticket[computer]" type="number" min="1" max="21" maxlength="2" placeholder="1-21" required>
-				</div>
-			</div>
+      <!-- computer # field -->
+      <div class="control-group">
+        <label class="control-label" for="ticket-computer">Computer #</label>
+        <div class="controls">
+          <input id="ticket-computer" name="ticket[computer]" type="number" min="1" max="21" maxlength="2" placeholder="1-21" required>
+        </div>
+      </div>
 
-		</div>
+    </div>
 
-	</div>
+  </div>
 
-	<!-- two buttons for editing/creating the Ticket, depending on its type -->
-	<div id="submit-buttons">
+  <!-- two buttons for editing/creating the Ticket, depending on its type -->
+  <div id="submit-buttons">
 
-		<button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
-			<i class="icon-question-sign"></i> Create help ticket
-		</button>
+    <button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
+      <i class="icon-question-sign"></i> Create help ticket
+    </button>
 
-		<button name="ticket[reason]" value="lab completed" type="submit" class="btn btn-success">
-			<i class="icon-ok"></i> Create lab completed ticket
-		</button>
+    <button name="ticket[reason]" value="lab completed" type="submit" class="btn btn-success">
+      <i class="icon-ok"></i> Create lab completed ticket
+    </button>
 
-	</div>
+  </div>
 
 <% end %>
