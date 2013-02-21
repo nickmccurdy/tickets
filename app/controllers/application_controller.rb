@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
 
 	protected
 
-		def authenticate
-			authenticate_or_request_with_http_basic do |username, password|
-				username == CONFIG['username'] && password == CONFIG['password']
-			end
+	def authenticate
+		authenticate_or_request_with_http_basic do |username, password|
+			username == CONFIG['username'] && password == CONFIG['password']
 		end
+	end
 
 end
