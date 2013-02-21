@@ -1,3 +1,4 @@
+<!-- show notices to the user (if need be) -->
 <% if notice %>
 	<div class="alert alert-success">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -5,6 +6,7 @@
 	</div>
 <% end %>
 
+<!-- show names and values of the Ticket's attributes -->
 <%= show_attribute 'Name', @ticket.name %>
 <%= show_attribute 'Computer #', @ticket.computer %>
 <%= show_attribute 'Reason', @ticket.reason %>

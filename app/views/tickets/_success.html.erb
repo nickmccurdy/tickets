@@ -1,6 +1,7 @@
 <% if flash[:ticket] and flash[:ticket].valid? %>
 	<div class="alert alert-success">
 		<button type="button" class="close" data-dismiss="alert">&times;</button>
+
 		Your ticket has been filed at <strong><%= flash[:ticket].created_at %></strong>
 		for <strong><%= flash[:ticket].reason %></strong> at computer
 		<strong><%= flash[:ticket].computer %></strong>

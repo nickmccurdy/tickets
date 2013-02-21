@@ -1,4 +1,5 @@
 <table class="table table-striped table-bordered table-hover table-condensed" id="ticket-list">
+	<!-- header of the table -->
 	<tr>
 		<th>Name</th>
 		<th><span class="hidden-phone">Computer</span> #</th>
@@ -7,6 +8,7 @@
 	</tr>
 
 <% if @tickets.length > 0 %>
+	<!-- body of the table -->
 	<% @tickets.each do |ticket| %>
 		<tr>
 			<td><%= ticket.name %></td>
@@ -21,6 +23,7 @@
 		</tr>
 	<% end %>
 <% else %>
+	<!-- displayed if no tickets are open -->
 	<tr><td class="muted" colspan="4">No tickets are open.</td></tr>
 <% end %>
 </table>

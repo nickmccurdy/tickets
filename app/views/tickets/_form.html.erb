@@ -1,13 +1,17 @@
 <%= form_for(ticket) do |f| %>
 
+	<!-- display errors (if needed) -->
 	<%= render 'errors', ticket: ticket %>
 
+	<!-- display success notices (if needed) -->
 	<%= render 'success' %>
 
+	<!-- Ticket edit/creation form -->
 	<div class="form-horizontal" id="ticket-form">
 
 		<div class="well">
 
+			<!-- name field -->
 			<div class="control-group">
 				<label class="control-label" for="ticket-name">Name</label>
 				<div class="controls">
@@ -15,6 +19,7 @@
 				</div>
 			</div>
 
+			<!-- computer # field -->
 			<div class="control-group">
 				<label class="control-label" for="ticket-computer">Computer #</label>
 				<div class="controls">
@@ -26,6 +31,7 @@
 
 	</div>
 
+	<!-- two buttons for editing/creating the Ticket, depending on its type -->
 	<div id="submit-buttons">
 
 		<button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
