@@ -58,13 +58,11 @@ class TicketsController < ApplicationController
   def create
     flash[:ticket] = @ticket = Ticket.new(params[:ticket])
 
-    respond_to do |format|
+    respond_with @ticket do |format|
       if @ticket.save
         format.html { redirect_to '/' }
-        format.json { render json: @ticket, status: :created, location: @ticket }
       else
         format.html { render "new" }
-        format.json { render json: @ticket.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -78,13 +76,11 @@ class TicketsController < ApplicationController
   def update
     @ticket = Ticket.find(params[:id])
 
-    respond_to do |format|
+    respond_with @ticket do |format|
       if @ticket.update_attributes(params[:ticket])
         format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render "edit" }
-        format.json { render json: @ticket.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -100,9 +96,8 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @ticket.destroy
 
-    respond_to do |format|
+    respond_with @ticket do |format|
       format.html { redirect_to '/list' }
-      format.json { head :no_content }
     end
   end
 
