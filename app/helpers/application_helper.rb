@@ -19,11 +19,7 @@ module ApplicationHelper
   #
   # @return [String] the generated HTML navbar link
   def navbar_link name, path, icon=nil
-    render partial: 'navbar_link', locals: {
-      path: path,
-      name: name,
-      icon: icon
-    }
+    render 'navbar_link', path: path, name: name, icon: icon
   end
 
   # Renders a nice display of an attribute with a given name and value.
@@ -33,10 +29,7 @@ module ApplicationHelper
   #
   # @return [String] the generated HTML display of the attribute
   def show_attribute name, value
-    render partial: 'show_attribute', locals: {
-      name: name,
-      value: value
-    }
+    render 'show_attribute', name: name, value: value
   end
 
 end
