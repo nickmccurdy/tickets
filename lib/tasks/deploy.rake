@@ -2,7 +2,7 @@
 task deploy: ['deploy:push', 'deploy:restart', 'deploy:migrate']
 
 namespace :deploy do
-  APP = 'tickets'
+  APP = 'tickets-demo'
 
   task :push do
     puts 'Deploying site to Heroku ...'
