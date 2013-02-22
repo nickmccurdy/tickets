@@ -17,7 +17,7 @@ class TicketsController < ApplicationController
     respond_with @tickets
   end
 
-  # Shows the page for the Ticket.
+  # Shows the page for the Ticket. [disabled]
   #
   # GET /tickets/1
   # GET /tickets/1.json
@@ -39,7 +39,7 @@ class TicketsController < ApplicationController
     respond_with @ticket
   end
 
-  # Edits the values of a Ticket.
+  # Edits the values of a Ticket. [disabled]
   #
   # GET /tickets/1/edit
   #
@@ -65,7 +65,7 @@ class TicketsController < ApplicationController
     end
   end
 
-  # Updates the values of a Ticket.
+  # Updates the values of a Ticket. [disabled]
   #
   # PUT /tickets/1
   # PUT /tickets/1.json
