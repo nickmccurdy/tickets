@@ -1,6 +1,7 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
   before_filter :authenticate, except: [:new, :create] unless Rails.env == 'test'
+  before_filter :find_ticket, only: [:show, :edit, :update, :destroy]
 
   respond_to :html, :json
 
@@ -23,8 +24,6 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the Ticket
   def show
-    @ticket = Ticket.find(params[:id])
-
     respond_with @ticket
   end
 
@@ -46,7 +45,6 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the Ticket edit page
   def edit
-    @ticket = Ticket.find(params[:id])
   end
 
   # Creates and saves a new Ticket.
@@ -74,8 +72,6 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the updated Ticket
   def update
-    @ticket = Ticket.find(params[:id])
-
     respond_with @ticket do |format|
       if @ticket.update_attributes(params[:ticket])
         format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
@@ -93,12 +89,16 @@ class TicketsController < ApplicationController
   # @return [String] the HTML/JSON notifying the user that the Ticket was
   # destroyed
   def destroy
-    @ticket = Ticket.find(params[:id])
     @ticket.destroy
 
     respond_with @ticket do |format|
       format.html { redirect_to '/list' }
     end
+  end
+
+  # Finds a ticket with a given id and assigns it to @ticket.
+  def find_ticket
+    @ticket = Ticket.find(params[:id])
   end
 
   # Deletes all Tickets from the database and brings the user back to the Ticket
@@ -111,4 +111,5 @@ class TicketsController < ApplicationController
     #flash[:notice] = "You have removed all results!"
     redirect_to '/list'
   end
+
 end
