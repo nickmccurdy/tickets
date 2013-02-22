@@ -9,20 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  */
 
-// Cosmo variables
-@import "bootswatch/cosmo/variables";
-
-// Bootstrap itself
-@import "bootstrap";
-
-// Bootstrap responsive styles
-@import "bootstrap-responsive";
-
-// Cosmo itself
-@import "bootswatch/cosmo/bootswatch";
-
-// Font Awesome
-@import "font-awesome";
-
-// Application styles
-@import "base";
+@import "bootswatch/cosmo/variables";  // Cosmo variables
+@import "bootstrap";                   // Bootstrap itself
+@import "bootstrap-responsive";        // Bootstrap responsive styles
+@import "bootswatch/cosmo/bootswatch"; // Cosmo itself
+@import "font-awesome";                // Font Awesome
+@import "base";                        // Application styles
