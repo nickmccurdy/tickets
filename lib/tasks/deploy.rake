@@ -6,7 +6,7 @@ namespace :deploy do
 
   task :push do
     puts 'Deploying site to Heroku ...'
-    puts `git push -f git@heroku.com:#{APP}.git`
+    puts `git push -f git@heroku.com:#{APP}.git master`
   end
 
   task :restart do
