@@ -2,6 +2,8 @@
 class TicketsController < ApplicationController
   before_filter :authenticate, except: [:new, :create] unless Rails.env == 'test'
 
+  respond_to :html, :json
+
   # Lists all Tickets in the database.
   #
   # GET /tickets
@@ -11,10 +13,7 @@ class TicketsController < ApplicationController
   def index
     @tickets = Ticket.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tickets }
-    end
+    respond_with @tickets
   end
 
   # Shows the page for the Ticket.
@@ -26,10 +25,7 @@ class TicketsController < ApplicationController
   def show
     @ticket = Ticket.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @ticket }
-    end
+    respond_with @ticket
   end
 
   # Renders a new Ticket JSON.
@@ -41,10 +37,7 @@ class TicketsController < ApplicationController
   def new
     @ticket = Ticket.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @ticket }
-    end
+    respond_with @ticket
   end
 
   # Edits the values of a Ticket.
