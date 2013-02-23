@@ -13,17 +13,17 @@
 
       <!-- name field -->
       <div class="control-group">
-        <label class="control-label" for="ticket-name">Name</label>
+        <%= f.label :name, class: 'control-label' %>
         <div class="controls">
-          <input id="ticket-name" name="ticket[name]" type="text" placeholder="Your name" required autofocus>
+          <%= f.text_field :name, placeholder: 'Your name', required: true, autofocus: true %>
         </div>
       </div>
 
       <!-- computer # field -->
       <div class="control-group">
-        <label class="control-label" for="ticket-computer">Computer #</label>
+        <%= f.label :computer, class: 'control-label' %>
         <div class="controls">
-          <input id="ticket-computer" name="ticket[computer]" type="number" min="1" max="21" maxlength="2" placeholder="1-21" required>
+          <%= f.number_field :computer, min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true %>
         </div>
       </div>
 
