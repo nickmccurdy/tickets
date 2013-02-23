@@ -18,30 +18,30 @@ class TicketTest < ActiveSupport::TestCase
   end
 
   test 'should validate name' do
-    Ticket.create name: 'Bob', computer: 1, reason: 'help'
-    assert_raise { Ticket.create computer: 2, reason: 'help', name: '' }
-    assert_raise { Ticket.create computer: 3, reason: 'help' }
+    Ticket.create! name: 'Bob', computer: 1, reason: 'help'
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! computer: 2, reason: 'help', name: '' }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! computer: 3, reason: 'help' }
   end
 
   test 'should validate computer' do
-    Ticket.create name: 'Bob', computer: 1, reason: 'help'
-    Ticket.create name: 'Bob', computer: 10, reason: 'help'
-    Ticket.create name: 'Bob', computer: 21, reason: 'help'
-    assert_raise { Ticket.create name: 'Bob', reason: 'help' }
-    assert_raise { Ticket.create name: 'Bob', computer: 1, reason: 'help' }
-    assert_raise { Ticket.create name: 'Bob', computer: 'two', reason: 'help' }
-    assert_raise { Ticket.create name: 'Bob', computer: 2.0, reason: 'help' }
-    assert_raise { Ticket.create name: 'Bob', computer: 0, reason: 'help' }
-    assert_raise { Ticket.create name: 'Bob', computer: -10, reason: 'help' }
-    assert_raise { Ticket.create name: 'Bob', computer: 22, reason: 'help' }
+    Ticket.create! name: 'Bob', computer: 1, reason: 'help'
+    Ticket.create! name: 'Bob', computer: 10, reason: 'help'
+    Ticket.create! name: 'Bob', computer: 21, reason: 'help'
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', reason: 'help' }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 1, reason: 'help' }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 'two', reason: 'help' }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 2.0, reason: 'help' }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 0, reason: 'help' }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: -10, reason: 'help' }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 22, reason: 'help' }
   end
 
   test 'should validate reason' do
-    Ticket.create name: 'Bob', computer: 1, reason: 'help'
-    Ticket.create name: 'Bob', computer: 2, reason: 'lab completed'
-    assert_raise { Ticket.create name: 'Bob', computer: 2 }
-    assert_raise { Ticket.create name: 'Bob', computer: 2, reason: '' }
-    assert_raise { Ticket.create name: 'Bob', computer: 2, reason: 'yolo' }
+    Ticket.create! name: 'Bob', computer: 1, reason: 'help'
+    Ticket.create! name: 'Bob', computer: 2, reason: 'lab completed'
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 2 }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 2, reason: '' }
+    assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 2, reason: 'yolo' }
   end
 
   test 'should get its position in the queue' do
