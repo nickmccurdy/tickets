@@ -9,7 +9,7 @@
   <!-- Ticket edit/creation form -->
   <div class="form-inputs">
     <%= f.input :name, input_html: { type: 'text', placeholder: 'Your name', required: true, autofocus: true } %>
-    <%= f.input :computer, input_html: { type: 'number', min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true } %>
+    <%= f.input :computer, input_html: { type: 'number', min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true }, label: 'Computer #' %>
   </div>
 
   <!-- two buttons for editing/creating the Ticket, depending on its type -->
