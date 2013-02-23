@@ -1,4 +1,4 @@
-<%= form_for(ticket) do |f| %>
+<%= simple_form_for ticket, html: { class: 'form-horizontal' } do |f| %>
 
   <!-- display errors (if needed) -->
   <%= render 'errors', ticket: ticket %>
@@ -7,32 +7,13 @@
   <%= render 'success' %>
 
   <!-- Ticket edit/creation form -->
-  <div class="form-horizontal" id="ticket-form">
-
-    <div class="well">
-
-      <!-- name field -->
-      <div class="control-group">
-        <%= f.label :name, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :name, placeholder: 'Your name', required: true, autofocus: true %>
-        </div>
-      </div>
-
-      <!-- computer # field -->
-      <div class="control-group">
-        <%= f.label :computer, class: 'control-label' %>
-        <div class="controls">
-          <%= f.number_field :computer, min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true %>
-        </div>
-      </div>
-
-    </div>
-
+  <div class="form-inputs">
+    <%= f.input :name, input_html: { type: 'text', placeholder: 'Your name', required: true, autofocus: true } %>
+    <%= f.input :computer, input_html: { type: 'number', min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true } %>
   </div>
 
   <!-- two buttons for editing/creating the Ticket, depending on its type -->
-  <div id="submit-buttons">
+  <div class="form-actions">
 
     <button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
       <i class="icon-question-sign"></i> Create help ticket
