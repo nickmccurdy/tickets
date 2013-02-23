@@ -7,6 +7,12 @@ class TicketTest < ActiveSupport::TestCase
     @ticket2 = tickets :two
   end
 
+  test 'should have accessible attributes' do
+    assert_equal @ticket1.name, 'Bill'
+    assert_equal @ticket1.computer, 1
+    assert_equal @ticket1.reason, 'help'
+  end
+
   test 'should be sorted by creation time (ascending)' do
     assert_equal Ticket.all, [@ticket1, @ticket2]
   end
