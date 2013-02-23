@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: Bill
-  computer: 1
+  name: Finn
+  computer: 10
   reason: help
 
 two:
-  name: Bob
-  computer: 21
+  name: Jake
+  computer: 11
   reason: lab completed
