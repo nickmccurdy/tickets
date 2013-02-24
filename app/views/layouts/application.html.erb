@@ -25,9 +25,11 @@
         <!-- extra UI buttons for the page -->
         <div id="list-buttons" class="pull-right">
 
-          <a href="/destroy_all" class="btn btn-danger" data-confirm="Are you sure?" rel="nofollow">
-            <i class="icon-remove"></i> Destroy all
-          </a>
+          <% if path_is? '/list' %>
+            <a href="/destroy_all" class="btn btn-danger" data-confirm="Are you sure?" rel="nofollow">
+              <i class="icon-remove"></i> Destroy all
+            </a>
+          <% end %>
 
           <button class="btn btn-inverse" onclick="document.location.reload()">
             <i class="icon-refresh"></i> Reload
