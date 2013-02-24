@@ -25,7 +25,7 @@ class TicketTest < ActiveSupport::TestCase
 
   test 'should validate computer' do
     Ticket.create! name: 'Bob', computer: 1, reason: 'help'
-    Ticket.create! name: 'Bob', computer: 10, reason: 'help'
+    Ticket.create! name: 'Bob', computer: 9, reason: 'help'
     Ticket.create! name: 'Bob', computer: 21, reason: 'help'
     assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', reason: 'help' }
     assert_raise(ActiveRecord::RecordInvalid) { Ticket.create! name: 'Bob', computer: 1, reason: 'help' }
