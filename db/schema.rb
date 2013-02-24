@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130105012352) do
+ActiveRecord::Schema.define(:version => 20130224084146) do
 
   create_table "tickets", :force => true do |t|
-    t.string   "computer"
+    t.integer  "computer",   :limit => 255
     t.string   "reason"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "name"
   end
 
