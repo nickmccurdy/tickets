@@ -42,7 +42,7 @@ gem 'browser_details', '~> 0.0'
 gem 'yard'
 gem 'yard-activerecord'
 gem 'redcarpet'
-gem 'simple_form'
+gem 'simple_form', github: 'plataformatec/simple_form'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0'
