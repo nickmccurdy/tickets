@@ -1,8 +1,8 @@
 Tickets::Application.routes.draw do
 
-  match '/' => 'tickets#create', via: :post
+  post '/' => 'tickets#create'
 
-  match '/list' => 'tickets#index'
+  get '/list' => 'tickets#index'
 
   root :to => 'tickets#new'
 
