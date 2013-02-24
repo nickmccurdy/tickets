@@ -1,7 +1,7 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
   before_filter :authenticate, except: [:new, :create] unless Rails.env == 'test'
-  before_filter :find_ticket, only: [:show, :edit, :update, :destroy]
+  before_filter :find_ticket, only: [:destroy]
 
   respond_to :html, :json
 
@@ -17,16 +17,6 @@ class TicketsController < ApplicationController
     respond_with @tickets
   end
 
-  # Shows the page for the Ticket. [disabled]
-  #
-  # GET /tickets/1
-  # GET /tickets/1.json
-  #
-  # @return [String] the HTML/JSON for the Ticket
-  def show
-    respond_with @ticket
-  end
-
   # Renders a new Ticket JSON.
   #
   # GET /tickets/new
@@ -37,14 +27,6 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new
 
     respond_with @ticket
-  end
-
-  # Edits the values of a Ticket. [disabled]
-  #
-  # GET /tickets/1/edit
-  #
-  # @return [String] the HTML/JSON for the Ticket edit page
-  def edit
   end
 
   # Creates and saves a new Ticket.
@@ -61,22 +43,6 @@ class TicketsController < ApplicationController
         format.html { redirect_to '/' }
       else
         format.html { render "new" }
-      end
-    end
-  end
-
-  # Updates the values of a Ticket. [disabled]
-  #
-  # PUT /tickets/1
-  # PUT /tickets/1.json
-  #
-  # @return [String] the HTML/JSON for the updated Ticket
-  def update
-    respond_with @ticket do |format|
-      if @ticket.update_attributes(params[:ticket])
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
-      else
-        format.html { render "edit" }
       end
     end
   end
