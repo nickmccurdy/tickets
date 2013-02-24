@@ -2,7 +2,7 @@
 # and cannot be modified. Every ticket has an owner name, a computer
 # number representing the computer it was filed at, and reason for its filing.
 class Ticket < ActiveRecord::Base
-  default_scope order 'created_at ASC'
+  default_scope { order 'created_at ASC' }
 
   validates :name,
     presence: true
