@@ -8,8 +8,8 @@ class TicketTest < ActiveSupport::TestCase
   end
 
   test 'should have accessible attributes' do
-    assert_equal @ticket1.name, 'Bill'
-    assert_equal @ticket1.computer, 1
+    assert_equal @ticket1.name, 'Finn'
+    assert_equal @ticket1.computer, 10
     assert_equal @ticket1.reason, 'help'
   end
 
