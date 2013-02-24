@@ -54,7 +54,7 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the saved Ticket
   def create
-    flash[:ticket] = @ticket = Ticket.new(params[:ticket])
+    flash[:ticket] = @ticket = Ticket.new(ticket_params)
 
     respond_with @ticket do |format|
       if @ticket.save
@@ -73,7 +73,7 @@ class TicketsController < ApplicationController
   # @return [String] the HTML/JSON for the updated Ticket
   def update
     respond_with @ticket do |format|
-      if @ticket.update_attributes(params[:ticket])
+      if @ticket.update_attributes(ticket_params)
         format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
       else
         format.html { render "edit" }
@@ -98,7 +98,7 @@ class TicketsController < ApplicationController
 
   # Finds a ticket with a given id and assigns it to @ticket.
   def find_ticket
-    @ticket = Ticket.find(params[:id])
+    @ticket = Ticket.find(ticket_params)
   end
 
   # Deletes all Tickets from the database and brings the user back to the Ticket
@@ -110,6 +110,15 @@ class TicketsController < ApplicationController
     Ticket.delete_all
     #flash[:notice] = "You have removed all results!"
     redirect_to '/list'
+  end
+
+  private
+
+  # Use this method to whitelist the permissible parameters. Example:
+  # params.require(:person).permit(:name, :age)
+  # Also, you can specialize this method with per-user checking of permissible attributes.
+  def ticket_params
+    params.require(:ticket).permit(:name, :computer, :reason)
   end
 
 end
