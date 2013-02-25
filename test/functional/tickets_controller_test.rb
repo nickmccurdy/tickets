@@ -17,13 +17,19 @@ class TicketsControllerTest < ActionController::TestCase
   end
 
   test 'should create ticket' do
+    # Note that using fixtures for the new ticket's data won't work here,
+    # since that fixture's data is already in the database, causing validation
+    # errors
+
     assert_difference 'Ticket.count' do
-      # Note that using fixtures for the new ticket's data won't work here,
-      # since that fixture's data is already in the database, causing validation
-      # errors
       post :create, ticket: { name: 'Fred', computer: 5, reason: 'help' }
     end
     assert_redirected_to '/'
+
+    assert_no_difference 'Ticket.count' do
+      post :create, ticket: { name: 'Not Fred', computer: 6, reason: 'idk bro' }
+    end
+    assert_response :success
   end
 
   test 'should NOT show ticket' do
