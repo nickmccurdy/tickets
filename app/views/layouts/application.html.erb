@@ -25,7 +25,7 @@
         <!-- extra UI buttons for the page -->
         <div id="list-buttons" class="pull-right">
 
-          <% if path_is? '/list' %>
+          <% if current_page? '/list' %>
             <a href="/destroy_all" class="btn btn-danger" data-confirm="Are you sure?" rel="nofollow">
               <i class="icon-remove"></i> Destroy all
             </a>
@@ -44,7 +44,7 @@
     <%= yield %>
 
     <!-- footer links -->
-    <% unless path_is? '/list' %>
+    <% unless current_page? '/list' %>
       <footer>
         <%= link_to 'Admin', '/list' %>
       </footer>
