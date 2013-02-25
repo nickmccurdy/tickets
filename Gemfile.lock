@@ -132,7 +132,7 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     useragent (0.4.16)
     yard (0.8.4.1)
-    yard-activerecord (0.0.6)
+    yard-activerecord (0.0.8)
       yard (>= 0.8.3)
 
 PLATFORMS
