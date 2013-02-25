@@ -21,6 +21,6 @@ class Ticket < ActiveRecord::Base
   #
   # @return [Integer] the number of Tickets created before the current Ticket
   def position
-    Ticket.where('created_at <= (?)', created_at).count
+    Ticket.where('created_at < (?)', created_at).count
   end
 end
