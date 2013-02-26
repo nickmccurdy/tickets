@@ -1,15 +1,6 @@
 # Provides helper methods for the application's models, views, and controllers.
 module ApplicationHelper
 
-  # Returns true if the given path matches the path of the current page.
-  #
-  # @param [String] str the path to check against the current page
-  #
-  # @return [Boolean] true if the given path and current page path match
-  def path_is? str
-    request.path == str
-  end
-
   # Renders a Bootstrap-ified navbar link with an optional icon.
   #
   # @param [String] name the name of the link, which is displayed to the user

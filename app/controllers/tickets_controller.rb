@@ -1,7 +1,7 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
-  before_filter :authenticate, except: [:new, :create] unless Rails.env == 'test'
-  before_filter :find_ticket, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate, only: [:index, :destroy, :destroy_all, :find_ticket]
+  before_filter :find_ticket, only: :destroy
 
   respond_to :html, :json
 
@@ -17,16 +17,6 @@ class TicketsController < ApplicationController
     respond_with @tickets
   end
 
-  # Shows the page for the Ticket. [disabled]
-  #
-  # GET /tickets/1
-  # GET /tickets/1.json
-  #
-  # @return [String] the HTML/JSON for the Ticket
-  def show
-    respond_with @ticket
-  end
-
   # Renders a new Ticket JSON.
   #
   # GET /tickets/new
@@ -39,14 +29,6 @@ class TicketsController < ApplicationController
     respond_with @ticket
   end
 
-  # Edits the values of a Ticket. [disabled]
-  #
-  # GET /tickets/1/edit
-  #
-  # @return [String] the HTML/JSON for the Ticket edit page
-  def edit
-  end
-
   # Creates and saves a new Ticket.
   #
   # POST /tickets
@@ -54,29 +36,13 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the saved Ticket
   def create
-    flash[:ticket] = @ticket = Ticket.new(ticket_params)
+    @ticket = Ticket.new(ticket_params)
 
     respond_with @ticket do |format|
       if @ticket.save
         format.html { redirect_to '/' }
       else
-        format.html { render "new" }
-      end
-    end
-  end
-
-  # Updates the values of a Ticket. [disabled]
-  #
-  # PUT /tickets/1
-  # PUT /tickets/1.json
-  #
-  # @return [String] the HTML/JSON for the updated Ticket
-  def update
-    respond_with @ticket do |format|
-      if @ticket.update_attributes(ticket_params)
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully updated.' }
-      else
-        format.html { render "edit" }
+        format.html { render 'new' }
       end
     end
   end
@@ -96,11 +62,6 @@ class TicketsController < ApplicationController
     end
   end
 
-  # Finds a ticket with a given id and assigns it to @ticket.
-  def find_ticket
-    @ticket = Ticket.find(ticket_params)
-  end
-
   # Deletes all Tickets from the database and brings the user back to the Ticket
   # list.
   #
@@ -108,8 +69,12 @@ class TicketsController < ApplicationController
   # GET /destroy_all.json
   def destroy_all
     Ticket.delete_all
-    #flash[:notice] = "You have removed all results!"
     redirect_to '/list'
+  end
+
+  # Finds a ticket with a given id and assigns it to @ticket.
+  def find_ticket
+    @ticket = Ticket.find ticket_params
   end
 
   private

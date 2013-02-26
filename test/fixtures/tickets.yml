@@ -4,8 +4,10 @@ one:
   name: Finn
   computer: 10
   reason: help
+  created_at: <%= Time.now - 1.hour %>
 
 two:
   name: Jake
   computer: 11
   reason: lab completed
+  created_at: <%= Time.now %>
