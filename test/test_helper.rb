@@ -12,5 +12,8 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  # Sets up login credentials to successfully access the admin page.
+  def supply_login_credentials
+    @request.env['HTTP_AUTHORIZATION'] = 'Basic ' + Base64::encode64('admin:password')
+  end
 end

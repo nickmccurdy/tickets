@@ -2,6 +2,7 @@ require 'test_helper'
 
 class TicketsControllerTest < ActionController::TestCase
   setup do
+    supply_login_credentials
     @ticket = tickets :one
   end
 
