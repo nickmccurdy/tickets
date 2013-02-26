@@ -36,7 +36,7 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the saved Ticket
   def create
-    flash[:ticket] = @ticket = Ticket.new params[:ticket]
+    @ticket = Ticket.new params[:ticket]
 
     respond_with @ticket do |format|
       if @ticket.save
@@ -69,7 +69,6 @@ class TicketsController < ApplicationController
   # GET /destroy_all.json
   def destroy_all
     Ticket.delete_all
-    #flash[:notice] = "You have removed all results!"
     redirect_to '/list'
   end
 
