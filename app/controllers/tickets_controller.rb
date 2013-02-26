@@ -1,7 +1,7 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
   before_filter :authenticate, except: [:new, :create] unless Rails.env == 'test'
-  before_filter :find_ticket, only: [:destroy]
+  before_filter :find_ticket, only: :destroy
 
   respond_to :html, :json
 
@@ -36,13 +36,13 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the saved Ticket
   def create
-    flash[:ticket] = @ticket = Ticket.new(params[:ticket])
+    flash[:ticket] = @ticket = Ticket.new params[:ticket]
 
     respond_with @ticket do |format|
       if @ticket.save
         format.html { redirect_to '/' }
       else
-        format.html { render "new" }
+        format.html { render 'new' }
       end
     end
   end
