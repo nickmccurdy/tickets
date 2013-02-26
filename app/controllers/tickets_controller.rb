@@ -62,11 +62,6 @@ class TicketsController < ApplicationController
     end
   end
 
-  # Finds a ticket with a given id and assigns it to @ticket.
-  def find_ticket
-    @ticket = Ticket.find(params[:id])
-  end
-
   # Deletes all Tickets from the database and brings the user back to the Ticket
   # list.
   #
@@ -76,6 +71,11 @@ class TicketsController < ApplicationController
     Ticket.delete_all
     #flash[:notice] = "You have removed all results!"
     redirect_to '/list'
+  end
+
+  # Finds a ticket with a given id and assigns it to @ticket.
+  def find_ticket
+    @ticket = Ticket.find params[:id]
   end
 
 end
