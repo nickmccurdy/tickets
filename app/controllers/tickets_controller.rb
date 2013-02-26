@@ -1,6 +1,6 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
-  before_filter :authenticate, except: [:new, :create] unless Rails.env == 'test'
+  before_filter :authenticate, only: [:index, :destroy, :destroy_all, :find_ticket] unless Rails.env == 'test'
   before_filter :find_ticket, only: :destroy
 
   respond_to :html, :json
