@@ -36,7 +36,7 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the saved Ticket
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = Ticket.new ticket_params
 
     respond_with @ticket do |format|
       if @ticket.save
