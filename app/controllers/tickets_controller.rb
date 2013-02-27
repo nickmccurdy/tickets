@@ -1,7 +1,6 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
   before_filter :authenticate, only: [:index, :destroy, :destroy_all, :find_ticket]
-  before_filter :find_ticket, only: :destroy
 
   respond_to :html, :json
 
@@ -55,6 +54,7 @@ class TicketsController < ApplicationController
   # @return [String] the HTML/JSON notifying the user that the Ticket was
   # destroyed
   def destroy
+    @ticket = Ticket.find params[:id]
     @ticket.destroy
 
     respond_with @ticket do |format|
@@ -70,11 +70,6 @@ class TicketsController < ApplicationController
   def destroy_all
     Ticket.delete_all
     redirect_to '/list'
-  end
-
-  # Finds a ticket with a given id and assigns it to @ticket.
-  def find_ticket
-    @ticket = Ticket.find ticket_params
   end
 
   private
