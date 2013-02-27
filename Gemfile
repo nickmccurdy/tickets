@@ -20,10 +20,6 @@ group :assets do
 	gem 'bootswatch-rails', '~> 0.3'
 	gem 'font-awesome-sass-rails', '~> 3.0'
 	gem 'coffee-rails', github: 'rails/coffee-rails'
-
-	# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-	# gem 'therubyracer', :platforms => :ruby
-
 	gem 'uglifier', '~> 1.0'
 end
 
@@ -43,18 +39,3 @@ gem 'yard'
 gem 'yard-activerecord'
 gem 'redcarpet'
 gem 'simple_form', github: 'plataformatec/simple_form'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder', '~> 1.0'
-
-# Use unicorn as the app server
-# gem 'unicorn', '~> 4.5'
-
-# Deploy with Capistrano
-# gem 'capistrano', '~> 2.14'
-
-# To use debugger
-# gem 'debugger', '~> 1.2'
