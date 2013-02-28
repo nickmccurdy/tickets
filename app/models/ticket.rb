@@ -17,10 +17,11 @@ class Ticket < ActiveRecord::Base
     inclusion: ['help', 'lab completed']
 
   # Gets the position of the current Ticket in the queue of all open Tickets,
-  # starting at 0.
+  # starting at 1.
   #
-  # @return [Integer] the number of Tickets created before the current Ticket
+  # @return [Integer] the number of Tickets created before the current Ticket,
+  # plus 1
   def position
-    Ticket.where('created_at < (?)', created_at).count
+    Ticket.where('created_at < (?)', created_at).count + 1
   end
 end

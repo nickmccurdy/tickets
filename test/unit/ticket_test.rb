@@ -45,8 +45,8 @@ class TicketTest < ActiveSupport::TestCase
   end
 
   test 'should get its position in the queue' do
-    assert_equal @ticket1.position, 0
-    assert_equal @ticket2.position, 1
+    assert_equal @ticket1.position, 1
+    assert_equal @ticket2.position, 2
   end
 
 end
