@@ -6,19 +6,20 @@ teachers to review.
 
 ## Installation
 
-You will want to open up a terminal for this.
+Please note that these instructions are for setting up and running an instance of Tickets in the development environment, and not for deploying it. Tickets is designed to be deployed to Heroku.
 
 1. Make sure you have Ruby 1.9.3, RubyGems, and Git installed and up to date with your package manager of choice. Alternatively, download the [Rails Installer](http://railsinstaller.org/) (Windows/Mac only) and follow the first two numbered bullets of step 2 from their website.
 
-2. Run `git clone https://github.com/thenickperson/tickets.git`.
+2. In your terminal, run:
+```shell
+git clone https://github.com/thenickperson/tickets.git
+cd tickets
+bundle install
+rake db:setup
+rails server
+```
 
-3. Run `cd tickets`.
-
-4. Run `bundle install`. This may require an admin password, which is normal. Congrats, you now have all the dependencies installed!
-
-5. Run tests with `rake test`. The app should still work if a test fails, though some specific things may break.
-
-6. Start up Rails with `rails server` and visit `http://localhost:3000/` in your web browser.
+3. Visit `http://localhost:3000/` in your web browser to start using your instance of Tickets.
 
 ## Requirements
 
