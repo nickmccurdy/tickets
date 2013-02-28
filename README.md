@@ -1,7 +1,8 @@
 # Tickets [![Build Status](https://secure.travis-ci.org/thenickperson/tickets.png?branch=master)](http://travis-ci.org/thenickperson/tickets) [![Dependency Status](https://gemnasium.com/thenickperson/tickets.png)](https://gemnasium.com/thenickperson/tickets) [![Code Climate](https://codeclimate.com/github/thenickperson/tickets.png)](https://codeclimate.com/github/thenickperson/tickets)
-A simple web app to manage support tickets from users.
+A simple web app that lets students in computer labs file help tickets for their
+teachers to review.
 
-## [Demo](http://tickets-demo.herokuapp.com/) (buggy)
+## [Demo](http://tickets-demo.herokuapp.com/) (experimental)
 
 ## Installation
 
@@ -27,21 +28,20 @@ You will want to open up a terminal for this.
 - Tickets have the following attributes, which are all required to be existent and non-empty
   - __name__ (string): the name of the person who created the ticket
   - __computer__ (integer, unique): the number of the computer that the ticket was created for
-  - __reason__ (string): the reason for the ticket, chosen via two submit buttons (reason must be from a list of two valid strings)
+  - __reason__ (string): the reason for the ticket, chosen via two submit buttons (reason must be either "help" or "lab completed")
   - __created_at__ (time): the time the ticket was created
-  - __updated_at__ (time): the time the ticket was last updated
 
 ### Permissions
-- Any user can list/create/destroy their own tickets
-- There may only be one ticket open per computer
-- Authentication is required for the view tickets page, which lets an admin list and destroy tickets
-- Admin password is specified via a config file
+- Any user can see/create/destroy their own tickets
+- There may only be one ticket open per computer (as a result, there should be only one ticket open per user)
+- Authentication is required for the ticket list page, which lets admins see and destroy all tickets
+- The username and password of the admin account are specified via a config file
 
 ### UI
 - Two main views
-  - Create ticket (all users)
-  - View tickets (admin only)
-- Let users know what their position is on the queue
-- Remember data about the user between page visits
-- Update both views with live data via AJAX so that HTTP requests are only required when switching pages or creating/destroying tickets
-- Documentation exists for the server maintainers and admins
+  - New ticket (all users)
+  - Ticket list (admin only)
+- Let users know their positions on the queue
+- Remember data about users between page visits
+- Update both views with live data via AJAX so that HTTP requests are only required when switching pages and creating/destroying tickets
+- Provide documentation for server maintainers and admins
