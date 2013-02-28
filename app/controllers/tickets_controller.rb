@@ -50,7 +50,7 @@ class TicketsController < ApplicationController
 
     respond_with @ticket do |format|
       if @ticket.save
-        format.html { redirect_to '/' }
+        format.html { redirect_to @ticket }
       else
         format.html { render 'new' }
       end
