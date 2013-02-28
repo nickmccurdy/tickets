@@ -24,19 +24,12 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the Ticket
   def show
-    respond_with @ticket
-  end
-
-  # Renders a new Ticket JSON.
-  #
-  # GET /tickets/new
-  # GET /tickets/new.json
-  #
-  # @return [String] the HTML/JSON for the new Ticket
-  def new
-    @ticket = Ticket.new
-
-    respond_with @ticket
+    if @ticket
+      respond_with @ticket
+    else
+      @ticket = Ticket.new
+      render 'new'
+    end
   end
 
   # Creates and saves a new Ticket.
@@ -84,6 +77,7 @@ class TicketsController < ApplicationController
 
   # Finds a ticket with a given id and assigns it to @ticket.
   def find_ticket
+    return nil unless params[:id]
     @ticket = Ticket.find params[:id]
   end
 

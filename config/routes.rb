@@ -4,7 +4,7 @@ Tickets::Application.routes.draw do
 
   match '/list' => 'tickets#index'
 
-  root :to => 'tickets#new'
+  root to: 'tickets#show'
 
   resources :tickets, path: '' do
     collection do
