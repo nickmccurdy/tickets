@@ -34,21 +34,21 @@ class TicketsControllerTest < ActionController::TestCase
   end
 
   test 'should NOT show ticket' do
-    assert_raise ActionController::RoutingError do
+    assert_raise AbstractController::ActionNotFound do
       get :show, id: @ticket
       assert_response :success
     end
   end
 
   test 'should NOT get edit' do
-    assert_raise ActionController::RoutingError do
+    assert_raise AbstractController::ActionNotFound do
       get :edit, id: @ticket
       assert_response :success
     end
   end
 
   test 'should NOT update ticket' do
-    assert_raise ActionController::RoutingError do
+    assert_raise AbstractController::ActionNotFound do
       put :update, id: @ticket, ticket: { name: @ticket.name, computer: @ticket.computer, reason: @ticket.reason }
       assert_redirected_to ticket_path assigns :ticket
     end
