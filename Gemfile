@@ -33,6 +33,11 @@ group :development do
 	gem 'better_errors', '~> 0.3'
 end
 
+group :heroku do
+  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
+
 gem 'jquery-rails', '~> 2.1'
 gem 'browser_details', '~> 0.0'
 
