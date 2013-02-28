@@ -1,8 +1,5 @@
 <%= simple_form_for ticket, html: { class: 'form-horizontal' } do |f| %>
 
-  <!-- display success notices (if needed) -->
-  <%= render 'success', ticket: ticket %>
-
   <!-- Ticket edit/creation form -->
   <div class="form-inputs">
     <%= f.input :name, input_html: { type: 'text', placeholder: 'Your name', required: true, autofocus: true } %>
