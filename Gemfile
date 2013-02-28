@@ -19,7 +19,6 @@ group :assets do
 	gem 'bootstrap-sass', '~> 2.2'
 	gem 'bootswatch-rails', '~> 0.3'
 	gem 'font-awesome-sass-rails', '~> 3.0'
-	gem 'coffee-rails', '~> 3.2'
 	gem 'uglifier', '~> 1.0'
 end
 
