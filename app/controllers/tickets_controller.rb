@@ -1,7 +1,7 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
   before_filter :authenticate, only: [:index, :destroy, :destroy_all, :find_ticket]
-  before_filter :find_ticket, only: :destroy
+  before_filter :find_ticket, only: [:show, :destroy]
 
   respond_to :html, :json
 
@@ -15,6 +15,16 @@ class TicketsController < ApplicationController
     @tickets = Ticket.all
 
     respond_with @tickets
+  end
+
+  # Shows the page for the Ticket.
+  #
+  # GET /tickets/1
+  # GET /tickets/1.json
+  #
+  # @return [String] the HTML/JSON for the Ticket
+  def show
+    respond_with @ticket
   end
 
   # Renders a new Ticket JSON.
