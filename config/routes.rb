@@ -6,7 +6,7 @@ Tickets::Application.routes.draw do
 
   root :to => 'tickets#new'
 
-  resources :tickets, path: '', except: [:show, :edit, :update] do
+  resources :tickets, path: '' do
     collection do
       get 'destroy_all'
     end
