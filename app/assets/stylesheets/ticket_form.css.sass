@@ -2,6 +2,20 @@
 
 #new_ticket
 
+  // Styles for when the page has no margins
+  @media (max-width: 600px)
+    .btn
+      display: block
+      margin-bottom: 15px
+      &:last-child
+        margin-bottom: 0px
+
+  // Styles for when the form is vertical, not horizontal
+  @media (max-width: 480px)
+    .form-inputs, .form-actions
+      padding-left: 20px
+      padding-right: 20px
+
   #ticket-name
     width: 150px
 
