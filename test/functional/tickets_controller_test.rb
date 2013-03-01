@@ -29,7 +29,10 @@ class TicketsControllerTest < ActionController::TestCase
   end
 
   test 'should show ticket' do
-    get :show, id: @ticket
+    get :show
+    assert_response :success
+
+    get :show, nil, computer: 10
     assert_response :success
   end
 
