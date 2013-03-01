@@ -1,6 +1,6 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
-  before_filter :authenticate, only: [:index, :destroy, :destroy_all, :find_ticket]
+  before_filter :authenticate, only: [:index, :destroy_all]
 
   respond_to :html, :json
 
