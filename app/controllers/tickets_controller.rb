@@ -43,7 +43,7 @@ class TicketsController < ApplicationController
     respond_with @ticket do |format|
       if @ticket.save
         session[:computer] = @ticket.computer
-        format.html { redirect_to @ticket }
+        format.html { redirect_to '/' }
       else
         format.html { render 'new' }
       end
