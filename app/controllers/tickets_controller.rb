@@ -2,14 +2,13 @@
 class TicketsController < ApplicationController
   before_filter :authenticate, only: [:index, :delete_all]
 
-  respond_to :html, :json
+  respond_to :html
 
   # Lists all Tickets in the database.
   #
   # GET /tickets
-  # GET /tickets.json
   #
-  # @return [String] the HTML/JSON for the Tickets page
+  # @return [String] the HTML for the Tickets page
   def index
     @tickets = Ticket.all
 
@@ -19,9 +18,8 @@ class TicketsController < ApplicationController
   # Shows the page for the Ticket.
   #
   # GET /tickets/1
-  # GET /tickets/1.json
   #
-  # @return [String] the HTML/JSON for the Ticket
+  # @return [String] the HTML for the Ticket
   def show
     if session[:computer] and @ticket = Ticket.where(computer: session[:computer]).first
       respond_with @ticket
@@ -34,9 +32,8 @@ class TicketsController < ApplicationController
   # Creates and saves a new Ticket.
   #
   # POST /tickets
-  # POST /tickets.json
   #
-  # @return [String] the HTML/JSON for the saved Ticket
+  # @return [String] the HTML for the saved Ticket
   def create
     @ticket = Ticket.new params[:ticket]
 
@@ -54,9 +51,8 @@ class TicketsController < ApplicationController
   # Deletes a Ticket from the database.
   #
   # DELETE /tickets/1
-  # DELETE /tickets/1.json
   #
-  # @return [String] the HTML/JSON notifying the user that the Ticket was
+  # @return [String] the HTML notifying the user that the Ticket was
   # destroyed
   def destroy
     begin
@@ -71,7 +67,6 @@ class TicketsController < ApplicationController
   # list.
   #
   # GET /delete_all
-  # GET /delete_all.json
   def delete_all
     Ticket.delete_all
 
