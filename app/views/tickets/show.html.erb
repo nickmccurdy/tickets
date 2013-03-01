@@ -1,5 +1,11 @@
 <% content_for :title, 'Show ticket' %>
 
+<% content_for :extra_buttons do %>
+  <%= link_to @ticket, method: :delete, class: 'btn btn-danger' do %>
+    <i class="icon-remove"></i> Delete
+  <% end %>
+<% end %>
+
 <!-- show notices to the user (if need be) -->
 <% if notice %>
   <div class="alert alert-success">
@@ -14,7 +20,3 @@
 <%= show_attribute 'Elapsed time', distance_of_time_in_words_to_now(@ticket.created_at) %>
 <%= show_attribute 'Computer #', @ticket.computer %>
 <%= show_attribute 'Reason', @ticket.reason %>
-
-<%= link_to @ticket, method: :delete, class: 'btn btn-danger' do %>
-  <i class="icon-remove"></i> Delete
-<% end %>
