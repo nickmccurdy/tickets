@@ -1,25 +1,26 @@
-# Manages Tickets and their public interfaces.
+# Manages Tickets and their public HTML interfaces.
 class TicketsController < ApplicationController
   before_filter :authenticate, only: [:index, :delete_all]
 
   respond_to :html
 
-  # Lists all Tickets in the database.
+  # Lists all Tickets in the database. Requires authentication.
   #
-  # GET /tickets
+  # GET /list
   #
-  # @return [String] the HTML for the Tickets page
+  # @return [String] the HTML for the Ticket list (which is also the admin page)
   def index
     @tickets = Ticket.all
 
     respond_with @tickets
   end
 
-  # Shows the page for the Ticket.
+  # Shows a user's Ticket. If the user does not have a Ticket open, it lets the
+  # user create a new one.
   #
-  # GET /tickets/1
+  # GET /
   #
-  # @return [String] the HTML for the Ticket
+  # @return [String] the HTML for the Ticket (or the new Ticket page)
   def show
     if session[:computer] and @ticket = Ticket.where(computer: session[:computer]).first
       respond_with @ticket
@@ -29,11 +30,13 @@ class TicketsController < ApplicationController
     end
   end
 
-  # Creates and saves a new Ticket.
+  # Creates and saves a new Ticket. If the Ticket is invalid, it lets the user
+  # create a new Ticket.
   #
-  # POST /tickets
+  # POST /
   #
-  # @return [String] the HTML for the saved Ticket
+  # @return [String] the HTML for the newly saved Ticket (or the new Ticket
+  #   page)
   def create
     @ticket = Ticket.new params[:ticket]
 
@@ -48,25 +51,26 @@ class TicketsController < ApplicationController
     end
   end
 
-  # Deletes a Ticket from the database.
+  # Deletes a Ticket from the database (if it's in the database).
   #
-  # DELETE /tickets/1
+  # DELETE /1
   #
-  # @return [String] the HTML notifying the user that the Ticket was
-  # destroyed
+  # @return [String] a redirect to the previous page (or / if there were none)
   def destroy
     begin
       @ticket = Ticket.find params[:id]
       @ticket.destroy
     rescue ActiveRecord::RecordNotFound
     end
+
     redirect_to(request.referer || '/')
   end
 
-  # Deletes all Tickets from the database and brings the user back to the Ticket
-  # list.
+  # Deletes all Tickets from the database. Requires authentication.
   #
   # GET /delete_all
+  #
+  # @return [String] a redirect to the previous page (or / if there were none)
   def delete_all
     Ticket.delete_all
 
