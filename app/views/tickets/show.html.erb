@@ -7,7 +7,7 @@
 <% end %>
 
 <!-- show names and values of the Ticket's attributes -->
-<div class="row-fluid">
+<div class="row-fluid" id="ticket-info">
   <div class="span6">
     <%= show_attribute 'Name', @ticket.name %>
     <%= show_attribute 'Computer #', @ticket.computer %>
