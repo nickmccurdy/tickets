@@ -23,9 +23,7 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the Ticket
   def show
-    if params[:id]
-      respond_with @ticket = Ticket.find(params[:id])
-    elsif session[:computer] and @ticket = Ticket.where(computer: session[:computer]).first
+    if session[:computer] and @ticket = Ticket.where(computer: session[:computer]).first
       respond_with @ticket
     else
       @ticket = Ticket.new
