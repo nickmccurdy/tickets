@@ -26,7 +26,7 @@ class TicketsController < ApplicationController
     if session[:computer] and @ticket = Ticket.where(computer: session[:computer]).first
       respond_with @ticket
     else
-      @ticket = Ticket.new
+      @ticket = Ticket.new name: session[:name], computer: session[:computer]
       render 'new'
     end
   end
@@ -42,6 +42,7 @@ class TicketsController < ApplicationController
 
     respond_with @ticket do |format|
       if @ticket.save
+        session[:name] = @ticket.name
         session[:computer] = @ticket.computer
         format.html { redirect_to '/' }
       else
