@@ -1,6 +1,6 @@
 # Manages Tickets and their public interfaces.
 class TicketsController < ApplicationController
-  before_filter :authenticate, only: [:index, :destroy_all]
+  before_filter :authenticate, only: [:index, :delete_all]
 
   respond_to :html, :json
 
@@ -70,9 +70,9 @@ class TicketsController < ApplicationController
   # Deletes all Tickets from the database and brings the user back to the Ticket
   # list.
   #
-  # GET /destroy_all
-  # GET /destroy_all.json
-  def destroy_all
+  # GET /delete_all
+  # GET /delete_all.json
+  def delete_all
     Ticket.delete_all
 
     redirect_to(request.referer || '/')

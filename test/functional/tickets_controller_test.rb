@@ -54,8 +54,8 @@ class TicketsControllerTest < ActionController::TestCase
     assert_redirected_to '/'
   end
 
-  test 'should destroy all tickets' do
-    get :destroy_all
+  test 'should delete all tickets' do
+    get :delete_all
     assert_equal 0, Ticket.count
     assert_redirected_to '/'
   end
