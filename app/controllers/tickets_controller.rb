@@ -61,9 +61,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find params[:id]
     @ticket.destroy
 
-    respond_with @ticket do |format|
-      format.html { redirect_to '/list' }
-    end
+    redirect_to request.referer
   end
 
   # Deletes all Tickets from the database and brings the user back to the Ticket
