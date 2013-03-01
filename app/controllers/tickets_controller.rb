@@ -23,8 +23,9 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML/JSON for the Ticket
   def show
-    @ticket = params[:id] ? Ticket.find(params[:id]) : nil
-    if @ticket
+    if params[:id]
+      respond_with @ticket = Ticket.find(params[:id])
+    elsif session[:computer] and @ticket = Ticket.where(computer: session[:computer]).first
       respond_with @ticket
     else
       @ticket = Ticket.new
@@ -43,6 +44,7 @@ class TicketsController < ApplicationController
 
     respond_with @ticket do |format|
       if @ticket.save
+        session[:computer] = @ticket.computer
         format.html { redirect_to @ticket }
       else
         format.html { render 'new' }
