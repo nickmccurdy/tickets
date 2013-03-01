@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
 
 # Important stuff
 gem 'rails', '= 4.0.0.beta1'
