@@ -12,11 +12,6 @@ class TicketsControllerTest < ActionController::TestCase
     assert_not_nil assigns :tickets
   end
 
-  test 'should get new' do
-    get :new
-    assert_response :success
-  end
-
   test 'should create ticket' do
     # Note that using fixtures for the new ticket's data won't work here,
     # since that fixture's data is already in the database, causing validation
@@ -33,11 +28,9 @@ class TicketsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should NOT show ticket' do
-    assert_raise ActionController::RoutingError do
-      get :show, id: @ticket
-      assert_response :success
-    end
+  test 'should show ticket' do
+    get :show, id: @ticket
+    assert_response :success
   end
 
   test 'should NOT get edit' do
