@@ -6,7 +6,7 @@ class TicketsController < ApplicationController
 
   # Lists all Tickets in the database. Requires authentication.
   #
-  # GET /list
+  # GET /admin
   #
   # @return [String] the HTML for the Ticket list (which is also the admin page)
   def index

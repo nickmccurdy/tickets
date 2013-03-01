@@ -40,9 +40,9 @@
     <%= yield %>
 
     <!-- footer links -->
-    <% unless current_page? '/list' %>
+    <% unless current_page? '/admin' %>
       <footer>
-        <%= link_to 'Admin', '/list' %>
+        <%= link_to 'Admin', '/admin' %>
       </footer>
     <% end %>
 

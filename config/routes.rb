@@ -2,7 +2,7 @@ Tickets::Application.routes.draw do
 
   match '/' => 'tickets#create', via: :post
 
-  match '/list' => 'tickets#index'
+  match '/admin' => 'tickets#index'
 
   root to: 'tickets#show'
 
