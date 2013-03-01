@@ -71,7 +71,8 @@ class TicketsController < ApplicationController
   # GET /destroy_all.json
   def destroy_all
     Ticket.delete_all
-    redirect_to '/list'
+
+    redirect_to(request.referer || '/')
   end
 
 end
