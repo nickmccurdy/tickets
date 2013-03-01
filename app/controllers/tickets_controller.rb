@@ -59,9 +59,11 @@ class TicketsController < ApplicationController
   # @return [String] the HTML/JSON notifying the user that the Ticket was
   # destroyed
   def destroy
-    @ticket = Ticket.find params[:id]
-    @ticket.destroy
-
+    begin
+      @ticket = Ticket.find params[:id]
+      @ticket.destroy
+    rescue ActiveRecord::RecordNotFound
+    end
     redirect_to(request.referer || '/')
   end
 
