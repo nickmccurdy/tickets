@@ -12,23 +12,15 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/simple_form.git
-  revision: d786d921b2bd434457848e93a8782e2aae5ee546
+  revision: 19c8f92a99ac6304680dd1473b7467a6ec06e27a
   specs:
     simple_form (3.0.0.beta1)
       actionpack (>= 4.0.0.beta, < 4.1)
       activemodel (>= 4.0.0.beta, < 4.1)
 
 GIT
-  remote: git://github.com/rails/coffee-rails.git
-  revision: 836bfceb2e9035767bbb0a8fe839a86b5936a47c
-  specs:
-    coffee-rails (4.0.0.beta1)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0.beta, < 5.0)
-
-GIT
   remote: git://github.com/rails/sass-rails.git
-  revision: 9b684bc9818b98d6c88165ed9b2ae425e2b4052f
+  revision: d435679b0fe528b954a9abd0059f975d94707574
   specs:
     sass-rails (4.0.0.beta1)
       railties (>= 4.0.0.beta, < 5.0)
