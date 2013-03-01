@@ -58,12 +58,12 @@ class TicketsControllerTest < ActionController::TestCase
     assert_difference 'Ticket.count', -1 do
       delete :destroy, id: @ticket
     end
-    assert_redirected_to '/list'
+    assert_redirected_to '/'
   end
 
   test 'should destroy all tickets' do
     get :destroy_all
     assert_equal 0, Ticket.count
-    assert_redirected_to '/list'
+    assert_redirected_to '/'
   end
 end
