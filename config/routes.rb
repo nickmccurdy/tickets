@@ -2,13 +2,13 @@ Tickets::Application.routes.draw do
 
   post '/' => 'tickets#create'
 
-  get '/list' => 'tickets#index'
+  get '/admin' => 'tickets#index'
 
   root to: 'tickets#show'
 
-  resources :tickets, path: '' do
+  resources :tickets, path: '', except: [:show, :edit, :update] do
     collection do
-      get 'destroy_all'
+      get 'delete_all'
     end
   end
 

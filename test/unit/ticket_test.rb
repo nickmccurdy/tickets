@@ -8,13 +8,13 @@ class TicketTest < ActiveSupport::TestCase
   end
 
   test 'should have accessible attributes' do
-    assert_equal @ticket1.name, 'Finn'
-    assert_equal @ticket1.computer, 10
-    assert_equal @ticket1.reason, 'help'
+    assert_equal 'Finn', @ticket1.name
+    assert_equal 10, @ticket1.computer
+    assert_equal 'help', @ticket1.reason
   end
 
   test 'should be sorted by creation time (ascending)' do
-    assert_equal Ticket.all, [@ticket1, @ticket2]
+    assert_equal [@ticket1, @ticket2], Ticket.all
   end
 
   test 'should validate name' do
@@ -45,8 +45,8 @@ class TicketTest < ActiveSupport::TestCase
   end
 
   test 'should get its position in the queue' do
-    assert_equal @ticket1.position, 0
-    assert_equal @ticket2.position, 1
+    assert_equal 1, @ticket1.position
+    assert_equal 2, @ticket2.position
   end
 
 end

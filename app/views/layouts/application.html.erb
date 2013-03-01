@@ -25,11 +25,7 @@
         <!-- extra UI buttons for the page -->
         <div id="list-buttons" class="pull-right">
 
-          <% if current_page? '/list' %>
-            <a href="/destroy_all" class="btn btn-danger" data-confirm="Are you sure?" rel="nofollow">
-              <i class="icon-remove"></i> Destroy all
-            </a>
-          <% end %>
+          <%= yield :extra_buttons %>
 
           <button class="btn btn-inverse" onclick="document.location.reload()">
             <i class="icon-refresh"></i> Reload
@@ -44,9 +40,9 @@
     <%= yield %>
 
     <!-- footer links -->
-    <% unless current_page? '/list' %>
+    <% unless current_page? '/admin' %>
       <footer>
-        <%= link_to 'Admin', '/list' %>
+        <%= link_to 'Admin', '/admin' %>
       </footer>
     <% end %>
 

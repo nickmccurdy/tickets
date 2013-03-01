@@ -1,79 +1,80 @@
-# Manages Tickets and their public interfaces.
+# Manages Tickets and their public HTML interfaces.
 class TicketsController < ApplicationController
-  before_filter :authenticate, only: [:index, :destroy, :destroy_all, :find_ticket]
+  before_filter :authenticate, only: [:index, :delete_all]
 
-  respond_to :html, :json
+  respond_to :html
 
-  # Lists all Tickets in the database.
+  # Lists all Tickets in the database. Requires authentication.
   #
-  # GET /tickets
-  # GET /tickets.json
+  # GET /admin
   #
-  # @return [String] the HTML/JSON for the Tickets page
+  # @return [String] the HTML for the Ticket list (which is also the admin page)
   def index
     @tickets = Ticket.all
 
     respond_with @tickets
   end
 
-  # Shows the page for the Ticket.
+  # Shows a user's Ticket. If the user does not have a Ticket open, it lets the
+  # user create a new one.
   #
-  # GET /tickets/1
-  # GET /tickets/1.json
+  # GET /
   #
-  # @return [String] the HTML/JSON for the Ticket
+  # @return [String] the HTML for the Ticket (or the new Ticket page)
   def show
-    @ticket = params[:id] ? Ticket.find(params[:id]) : nil
-    if @ticket
+    if session[:computer] and @ticket = Ticket.where(computer: session[:computer]).first
       respond_with @ticket
     else
-      @ticket = Ticket.new
+      @ticket = Ticket.new name: session[:name], computer: session[:computer]
       render 'new'
     end
   end
 
-  # Creates and saves a new Ticket.
+  # Creates and saves a new Ticket. If the Ticket is invalid, it lets the user
+  # create a new Ticket.
   #
-  # POST /tickets
-  # POST /tickets.json
+  # POST /
   #
-  # @return [String] the HTML/JSON for the saved Ticket
+  # @return [String] the HTML for the newly saved Ticket (or the new Ticket
+  #   page)
   def create
     @ticket = Ticket.new ticket_params
 
     respond_with @ticket do |format|
       if @ticket.save
-        format.html { redirect_to @ticket }
+        session[:name] = @ticket.name
+        session[:computer] = @ticket.computer
+        format.html { redirect_to '/' }
       else
         format.html { render 'new' }
       end
     end
   end
 
-  # Deletes a Ticket from the database.
+  # Deletes a Ticket from the database (if it's in the database).
   #
-  # DELETE /tickets/1
-  # DELETE /tickets/1.json
+  # DELETE /1
   #
-  # @return [String] the HTML/JSON notifying the user that the Ticket was
-  # destroyed
+  # @return [String] a redirect to the previous page (or / if there were none)
   def destroy
-    @ticket = Ticket.find params[:id]
-    @ticket.destroy
-
-    respond_with @ticket do |format|
-      format.html { redirect_to '/list' }
+    begin
+      @ticket = Ticket.find params[:id]
+      @ticket.destroy
+    rescue ActiveRecord::RecordNotFound
     end
+
+    redirect_to(request.referer || '/')
   end
 
-  # Deletes all Tickets from the database and brings the user back to the Ticket
-  # list.
+  # Deletes all Tickets from the database. Requires authentication.
   #
-  # GET /destroy_all
-  # GET /destroy_all.json
-  def destroy_all
+  # GET /delete_all
+  #
+  # @return [String] a redirect to the previous page (or / if there were none)
+  def delete_all
     Ticket.delete_all
-    redirect_to '/list'
+
+    redirect_to(request.referer || '/')
   end
 
   private

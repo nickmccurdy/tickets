@@ -12,11 +12,6 @@ class TicketsControllerTest < ActionController::TestCase
     assert_not_nil assigns :tickets
   end
 
-  test 'should get new' do
-    get :new
-    assert_response :success
-  end
-
   test 'should create ticket' do
     # Note that using fixtures for the new ticket's data won't work here,
     # since that fixture's data is already in the database, causing validation
@@ -33,11 +28,12 @@ class TicketsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should NOT show ticket' do
-    assert_raise ActionController::UrlGenerationError do
-      get :show, id: @ticket
-      assert_response :success
-    end
+  test 'should show ticket' do
+    get :show
+    assert_response :success
+
+    get :show, nil, computer: 10
+    assert_response :success
   end
 
   test 'should NOT get edit' do
@@ -58,12 +54,12 @@ class TicketsControllerTest < ActionController::TestCase
     assert_difference 'Ticket.count', -1 do
       delete :destroy, id: @ticket
     end
-    assert_redirected_to '/list'
+    assert_redirected_to '/'
   end
 
-  test 'should destroy all tickets' do
-    get :destroy_all
-    assert_equal Ticket.count, 0
-    assert_redirected_to '/list'
+  test 'should delete all tickets' do
+    get :delete_all
+    assert_equal 0, Ticket.count
+    assert_redirected_to '/'
   end
 end

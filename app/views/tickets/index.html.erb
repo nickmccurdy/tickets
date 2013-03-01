@@ -1,5 +1,11 @@
 <% content_for :title, 'All' %>
 
+<% content_for :extra_buttons do %>
+  <a href="/delete_all" class="btn btn-danger" data-confirm="Are you sure?" rel="nofollow">
+    <i class="icon-remove"></i> Delete all
+  </a>
+<% end %>
+
 <table class="table table-striped table-bordered table-hover table-condensed" id="ticket-list">
   <!-- header of the table -->
   <tr>
