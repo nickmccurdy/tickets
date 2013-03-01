@@ -1,4 +1,4 @@
-<% content_for :title, 'Show ticket' %>
+<% content_for :title, 'Your ticket' %>
 
 <% content_for :extra_buttons do %>
   <%= link_to @ticket, method: :delete, class: 'btn btn-danger' do %>
@@ -6,17 +6,15 @@
   <% end %>
 <% end %>
 
-<!-- show notices to the user (if need be) -->
-<% if notice %>
-  <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= notice %>
-  </div>
-<% end %>
-
 <!-- show names and values of the Ticket's attributes -->
-<%= show_attribute 'Name', @ticket.name %>
-<%= show_attribute 'Position', @ticket.position %>
-<%= show_attribute 'Elapsed time', distance_of_time_in_words_to_now(@ticket.created_at) %>
-<%= show_attribute 'Computer #', @ticket.computer %>
-<%= show_attribute 'Reason', @ticket.reason %>
+<div class="row-fluid" id="ticket-info">
+  <div class="span6">
+    <%= show_attribute 'Name', @ticket.name %>
+    <%= show_attribute 'Computer #', @ticket.computer %>
+    <%= show_attribute 'Reason', @ticket.reason %>
+  </div>
+  <div class="span6">
+    <%= show_attribute 'Position', @ticket.position %>
+    <%= show_attribute 'Elapsed time', distance_of_time_in_words_to_now(@ticket.created_at) %>
+  </div>
+</div>
