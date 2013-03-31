@@ -18,6 +18,7 @@ bundle install
 rake db:setup
 rails server
 ```
+If execjs gives you a `Could not find a JavaScript runtime` error, try installing [Node.js](http://nodejs.org/).
 
 3. Visit `http://localhost:3000/` in your web browser to start using your instance of Tickets.
 
