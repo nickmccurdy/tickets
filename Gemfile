@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Important stuff
-gem 'rails', '= 4.0.0.beta1'
+gem 'rails', '4.0.1'
 gem 'thin', '~> 1.5'
 
 # Database
