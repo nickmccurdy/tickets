@@ -2,33 +2,33 @@ source 'https://rubygems.org'
 
 # Important stuff
 gem 'rails', '4.0.1'
-gem 'thin', '~> 1.5'
+gem 'thin'
 
 # Database
 group :production do
-	gem 'pg', '~> 0.14'
+	gem 'pg'
 end
 group :development, :test do
-	gem 'sqlite3', '~> 1.3'
+	gem 'sqlite3'
 end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-	gem 'sass-rails', github: 'rails/sass-rails'
-	gem 'bootstrap-sass', '~> 2.2'
-	gem 'bootswatch-rails', '~> 0.3'
-	gem 'font-awesome-sass-rails', '~> 3.0'
-	gem 'uglifier', '~> 1.0'
+	gem 'sass-rails'
+	gem 'bootstrap-sass'
+	gem 'bootswatch-rails'
+	gem 'font-awesome-sass-rails'
+	gem 'uglifier'
 end
 
 group :test do
-	gem 'simplecov', '~> 0.7', require: false
+	gem 'simplecov', require: false
 end
 
 group :development do
-	gem 'binding_of_caller', '~> 0.6'
-	gem 'better_errors', '~> 0.3'
+	gem 'binding_of_caller'
+	gem 'better_errors'
 end
 
 group :heroku do
@@ -36,8 +36,8 @@ group :heroku do
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
-gem 'jquery-rails', '~> 2.1'
-gem 'browser_details', '~> 0.0'
+gem 'jquery-rails'
+gem 'browser_details'
 
 gem 'yard'
 gem 'yard-activerecord'
