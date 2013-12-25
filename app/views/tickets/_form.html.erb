@@ -1,4 +1,4 @@
-<%= form_for(ticket) do |f| %>
+<%= form_for(ticket, html: { class: 'form-horizontal', id: 'ticket-form', role: 'form' }) do |f| %>
 
   <!-- display errors (if needed) -->
   <%= render 'errors', ticket: ticket %>
@@ -6,41 +6,38 @@
   <!-- display success notices (if needed) -->
   <%= render 'success', ticket: ticket %>
 
-  <!-- Ticket edit/creation form -->
-  <div class="form-horizontal" id="ticket-form">
+  <div class="well">
 
-    <div class="well">
-
-      <!-- name field -->
-      <div class="control-group">
-        <%= f.label :name, class: 'control-label' %>
-        <div class="controls">
-          <%= f.text_field :name, placeholder: 'Your name', required: true, autofocus: true %>
-        </div>
+    <!-- name field -->
+    <div class="form-group">
+      <%= f.label :name, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Your name', required: true, autofocus: true %>
       </div>
+    </div>
 
-      <!-- computer # field -->
-      <div class="control-group">
-        <%= f.label :computer, class: 'control-label' %>
-        <div class="controls">
-          <%= f.number_field :computer, min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true, label: 'Computer #' %>
-        </div>
+    <!-- computer # field -->
+    <div class="form-group">
+      <%= f.label :computer, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-10">
+        <%= f.number_field :computer, class: 'form-control', min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true, label: 'Computer #' %>
       </div>
-
     </div>
 
   </div>
 
   <!-- two buttons for editing/creating the Ticket, depending on its type -->
-  <div id="submit-buttons">
+  <div class="form-group" id="submit-buttons">
 
-    <button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
-      <i class="glyphicon glyphicon-question-sign"></i> Help
-    </button>
+    <div class="col-sm-offset-2 col-sm-10">
+      <button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
+        <i class="glyphicon glyphicon-question-sign"></i> Help
+      </button>
 
-    <button name="ticket[reason]" value="lab completed" type="submit" class="btn btn-success">
-      <i class="glyphicon glyphicon-ok"></i> Lab completed
-    </button>
+      <button name="ticket[reason]" value="lab completed" type="submit" class="btn btn-success">
+        <i class="glyphicon glyphicon-ok"></i> Lab completed
+      </button>
+    </div>
 
   </div>
 
