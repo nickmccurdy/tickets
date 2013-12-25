@@ -24,19 +24,19 @@
       </div>
     </div>
 
-  </div>
+    <!-- two buttons for editing/creating the Ticket, depending on its type -->
+    <div class="form-group" id="submit-buttons">
 
-  <!-- two buttons for editing/creating the Ticket, depending on its type -->
-  <div class="form-group" id="submit-buttons">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
+          <i class="glyphicon glyphicon-question-sign"></i> Help
+        </button>
 
-    <div class="col-sm-offset-2 col-sm-10">
-      <button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
-        <i class="glyphicon glyphicon-question-sign"></i> Help
-      </button>
+        <button name="ticket[reason]" value="lab completed" type="submit" class="btn btn-success">
+          <i class="glyphicon glyphicon-ok"></i> Lab completed
+        </button>
+      </div>
 
-      <button name="ticket[reason]" value="lab completed" type="submit" class="btn btn-success">
-        <i class="glyphicon glyphicon-ok"></i> Lab completed
-      </button>
     </div>
 
   </div>
