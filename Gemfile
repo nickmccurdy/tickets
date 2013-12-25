@@ -15,7 +15,6 @@ end
 # Gems used for assets
 gem 'sass-rails'
 gem 'bootstrap-sass'
-gem 'font-awesome-sass-rails'
 gem 'uglifier'
 
 group :test do
