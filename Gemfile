@@ -15,7 +15,6 @@ end
 # Gems used for assets
 gem 'sass-rails'
 gem 'bootstrap-sass'
-gem 'bootswatch-rails'
 gem 'font-awesome-sass-rails'
 gem 'uglifier'
 
