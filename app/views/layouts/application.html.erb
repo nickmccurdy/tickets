@@ -16,25 +16,23 @@
   <div class="container" id="main">
 
     <!-- navbar -->
-    <div class="navbar navbar-default">
-      <div class="navbar-inner">
+    <nav class="navbar navbar-default" role="navigation">
 
-        <!-- major page links -->
-        <a class="navbar-brand" href="/">Tickets</a>
+      <!-- major page links -->
+      <a class="navbar-brand" href="/">Tickets</a>
 
-        <!-- extra UI buttons for the page -->
-        <div id="list-buttons" class="pull-right">
+      <!-- extra UI buttons for the page -->
+      <div id="list-buttons" class="pull-right">
 
-          <%= yield :extra_buttons %>
+        <%= yield :extra_buttons %>
 
-          <button class="btn btn-inverse" onclick="document.location.reload()">
-            <i class="glyphicon glyphicon-refresh"></i> Reload
-          </button>
-
-        </div>
+        <button class="btn btn-inverse navbar-btn" onclick="document.location.reload()">
+          <i class="glyphicon glyphicon-refresh"></i> Reload
+        </button>
 
       </div>
-    </div>
+
+    </nav>
 
     <!-- page content -->
     <%= yield %>
