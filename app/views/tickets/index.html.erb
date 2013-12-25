@@ -2,7 +2,7 @@
 
 <% content_for :extra_buttons do %>
   <a href="/delete_all" class="btn btn-danger" data-confirm="Are you sure?" rel="nofollow">
-    <i class="icon-remove"></i> Delete all
+    <i class="glyphicon glyphicon-remove"></i> Delete all
   </a>
 <% end %>
 
@@ -10,9 +10,9 @@
   <!-- header of the table -->
   <tr>
     <th>Name</th>
-    <th><span class="hidden-phone">Computer</span> #</th>
+    <th><span class="hidden-xs">Computer</span> #</th>
     <th>Reason</th>
-    <th>Elapsed time <span class="muted not-bold hidden-phone">(oldest to newest)</span></th>
+    <th>Elapsed time <span class="text-muted not-bold hidden-xs">(oldest to newest)</span></th>
   </tr>
 
 <% if @tickets.length > 0 %>
@@ -20,6 +20,6 @@
   <%= render @tickets %>
 <% else %>
   <!-- displayed if no tickets are open -->
-  <tr><td class="muted" colspan="4">No tickets are open.</td></tr>
+  <tr><td class="text-muted" colspan="4">No tickets are open.</td></tr>
 <% end %>
 </table>
