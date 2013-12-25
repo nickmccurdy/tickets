@@ -1,4 +1,4 @@
-<%= simple_form_for ticket, html: { class: 'form-horizontal' } do |f| %>
+<%= form_for(ticket) do |f| %>
 
   <!-- display errors (if needed) -->
   <%= render 'errors', ticket: ticket %>
@@ -7,13 +7,32 @@
   <%= render 'success', ticket: ticket %>
 
   <!-- Ticket edit/creation form -->
-  <div class="form-inputs">
-    <%= f.input :name, input_html: { type: 'text', placeholder: 'Your name', required: true, autofocus: true } %>
-    <%= f.input :computer, input_html: { type: 'number', min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true }, label: 'Computer #' %>
+  <div class="form-horizontal" id="ticket-form">
+
+    <div class="well">
+
+      <!-- name field -->
+      <div class="control-group">
+        <%= f.label :name, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :name, placeholder: 'Your name', required: true, autofocus: true %>
+        </div>
+      </div>
+
+      <!-- computer # field -->
+      <div class="control-group">
+        <%= f.label :computer, class: 'control-label' %>
+        <div class="controls">
+          <%= f.number_field :computer, min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true, label: 'Computer #' %>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- two buttons for editing/creating the Ticket, depending on its type -->
-  <div class="form-actions">
+  <div id="submit-buttons">
 
     <button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
       <i class="glyphicon glyphicon-question-sign"></i> Help
