@@ -26,10 +26,7 @@ group :development do
 	gem 'better_errors'
 end
 
-group :heroku do
-  gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
-  gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
-end
+gem 'rails_12factor', group: :production
 
 gem 'jquery-rails'
 gem 'browser_details'
@@ -37,4 +34,4 @@ gem 'browser_details'
 gem 'yard'
 gem 'yard-activerecord'
 gem 'redcarpet'
-gem 'simple_form', github: 'plataformatec/simple_form'
+gem 'simple_form'
