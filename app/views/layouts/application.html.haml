@@ -25,9 +25,11 @@
           %small= yield :title
 
           / extra UI buttons for the page
-          #list-buttons.pull-right
+          .pull-right
             = yield :extra_buttons
-            - unless current_page? '/admin'
+            - if current_page? '/admin'
+              = link_to 'Home', '/', class: 'btn btn-default'
+            - else
               = link_to 'Admin', '/admin', class: 'btn btn-default'
 
       / page content
