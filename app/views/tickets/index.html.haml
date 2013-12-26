@@ -1,0 +1,26 @@
+- content_for :title, 'Admin'
+- content_for :extra_buttons do
+  = button_to '/delete_all', method: 'get', class: 'btn btn-danger navbar-btn', html: { 'data-confirm' => 'Are you sure?', rel: 'nofollow'} do
+    %i.glyphicon.glyphicon-remove
+    Delete all
+
+%table.table.table-striped.table-bordered.table-hover.table-condensed
+
+  / header of the table
+  %tr
+    %th Name
+    %th
+      %span.hidden-xs Computer
+      \#
+    %th Reason
+    %th
+      Elapsed time
+      %span.text-muted.hidden-xs (oldest to newest)
+
+  - if @tickets.length > 0
+    / body of the table
+    = render @tickets
+  - else
+    / displayed if no tickets are open
+    %tr
+      %td.text-muted{colspan: '4'} No tickets are open.
