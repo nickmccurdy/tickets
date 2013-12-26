@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # TODO: Remoe this for security purposes
+  # TODO: Remove this for security purposes
   skip_before_filter :verify_authenticity_token
 
   protected
