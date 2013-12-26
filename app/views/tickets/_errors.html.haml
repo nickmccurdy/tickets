@@ -1,0 +1,5 @@
+- if ticket.errors.any?
+  - ticket.errors.full_messages.each do |msg|
+    .alert.alert-error
+      %button.close{'data-dismiss' => 'alert', type: 'button'} &times;
+      %strong Error: #{msg}

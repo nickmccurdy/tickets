@@ -1,0 +1,32 @@
+= form_for(ticket, html: { class: 'form-horizontal', role: 'form' }) do |f|
+
+  / display errors (if needed)
+  = render 'errors', ticket: ticket
+  / display success notices (if needed)
+  = render 'success', ticket: ticket
+
+  .well
+
+    / name field
+    .form-group
+      = f.label :name, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.text_field :name, class: 'form-control', placeholder: 'Your name', required: true, autofocus: true
+
+    / computer # field
+    .form-group
+      = f.label :computer, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = f.number_field :computer, class: 'form-control', min: 1, max: 21, maxlength: 2, placeholder: '1-21', required: true, label: 'Computer #'
+
+    / two buttons for editing/creating the Ticket, depending on its type
+    .form-group
+      .col-sm-offset-2.col-sm-10
+
+        %button.btn.btn-warning{name: 'ticket[reason]', type: 'submit', value: 'help'}
+          %i.glyphicon.glyphicon-question-sign
+          Help
+
+        %button.btn.btn-success{name: 'ticket[reason]', type: 'submit', value: 'lab completed'}
+          %i.glyphicon.glyphicon-ok
+          Lab completed

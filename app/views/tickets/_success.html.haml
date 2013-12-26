@@ -1,0 +1,10 @@
+- if ticket and ticket.valid?
+  .alert.alert-success
+    %button.close{'data-dismiss' => 'alert', type: 'button'} &times;
+
+    Your ticket has been filed at
+    %strong= ticket.created_at
+    for
+    %strong= ticket.reason
+    at computer
+    %strong= ticket.computer
