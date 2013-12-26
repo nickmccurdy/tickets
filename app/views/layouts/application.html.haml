@@ -1,0 +1,42 @@
+!!!
+%html{lang: 'en'}
+
+  %head
+    %meta{charset: 'utf-8'}/
+    / basic info
+    %title Tickets - #{yield :title}
+    %meta{content: 'width=device-width, initial-scale=1.0', name: 'viewport'}/
+    / css
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    / meta tags
+    = csrf_meta_tags
+    / icons
+    %link{href: '/favicon.png', rel: 'icon'}/
+
+  %body
+
+    #main.container
+
+      / navbar
+      %nav.navbar.navbar-default{role: 'navigation'}
+
+        / major page links
+        %a.navbar-brand{href: '/'} Tickets
+
+        / extra UI buttons for the page
+        #list-buttons.pull-right
+          = yield :extra_buttons
+          %button.btn.btn-default.navbar-btn{onclick: 'document.location.reload()'}
+            %i.glyphicon.glyphicon-refresh
+            Reload
+
+      / page content
+      = yield
+
+      / footer links
+      - unless current_page? '/admin'
+        %footer= link_to 'Admin', '/admin'
+
+    / scripts
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    /[if lt IE 9] <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
