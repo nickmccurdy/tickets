@@ -27,13 +27,11 @@
           / extra UI buttons for the page
           #list-buttons.pull-right
             = yield :extra_buttons
+            - unless current_page? '/admin'
+              = link_to 'Admin', '/admin', class: 'btn btn-default'
 
       / page content
       = yield
-
-      / footer links
-      - unless current_page? '/admin'
-        %footer= link_to 'Admin', '/admin'
 
     / scripts
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
