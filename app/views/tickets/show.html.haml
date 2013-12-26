@@ -7,7 +7,7 @@
 / show names and values of the Ticket's attributes
 %dl.dl-horizontal
   = show_attribute 'Name', @ticket.name
-  = show_attribute 'Computer #', @ticket.computer
+  = show_attribute 'Computer', @ticket.computer
   = show_attribute 'Reason', @ticket.reason
   = show_attribute 'Position', @ticket.position
   = show_attribute 'Elapsed time', distance_of_time_in_words_to_now(@ticket.created_at)
