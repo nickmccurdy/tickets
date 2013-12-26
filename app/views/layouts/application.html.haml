@@ -17,21 +17,19 @@
 
     #main.container
 
-      / navbar
-      %nav.navbar.navbar-default{role: 'navigation'}
-
-        / major page links
-        %a.navbar-brand{href: '/'} Tickets
-
-        / extra UI buttons for the page
-        #list-buttons.pull-right
-          = yield :extra_buttons
-          %button.btn.btn-default.navbar-btn{onclick: 'document.location.reload()'}
-            %i.glyphicon.glyphicon-refresh
-            Reload
-
       .page-header
-        %h1= yield :title
+        %h1
+
+          / app and page title
+          Tickets
+          %small= yield :title
+
+          / extra UI buttons for the page
+          #list-buttons.pull-right
+            = yield :extra_buttons
+            %button.btn.btn-default{onclick: 'document.location.reload()'}
+              %i.glyphicon.glyphicon-refresh
+              Reload
 
       / page content
       = yield
