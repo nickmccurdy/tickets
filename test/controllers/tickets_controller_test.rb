@@ -36,20 +36,6 @@ class TicketsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test 'should NOT get edit' do
-    assert_raise ActionController::UrlGenerationError do
-      get :edit, id: @ticket
-      assert_response :success
-    end
-  end
-
-  test 'should NOT update ticket' do
-    assert_raise ActionController::UrlGenerationError do
-      put :update, id: @ticket, ticket: { name: @ticket.name, computer: @ticket.computer, reason: @ticket.reason }
-      assert_redirected_to ticket_path assigns :ticket
-    end
-  end
-
   test 'should destroy ticket' do
     assert_difference 'Ticket.count', -1 do
       delete :destroy, id: @ticket
