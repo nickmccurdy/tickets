@@ -1,48 +1,7 @@
-/* ticket creation form and ticket display */
+/* ticket creation form */
 
-#new_ticket
+#ticket_name
+  width: 150px
 
-  // Styles for when the page has no margins
-  @media (max-width: 600px)
-    .btn
-      display: block
-      margin-bottom: 15px
-      &:last-child
-        margin-bottom: 0px
-
-  // Styles for when the form is vertical, not horizontal
-  @media (max-width: 480px)
-    .form-inputs, .form-actions
-      padding-left: 20px
-      padding-right: 20px
-
-  #ticket-name
-    width: 150px
-
-  #ticket-computer
-    width: 50px
-
-  .form-horizontal .form-group:last-child
-    margin-bottom: 0px
-
-  #submit-buttons
-    text-align: center
-    .btn
-      margin: 0px 10px
-      margin-top: 5px
-
-#ticket-info
-  padding-left: 20px
-  padding-right: 20px
-
-/* ticket list page */
-
-#ticket-list
-
-  tr:nth-child(1) th
-    background-color: #ddd
-    .text-muted
-      color: #888
-
-  .btn
-    font-weight: normal
+#ticket_computer
+  width: 50px

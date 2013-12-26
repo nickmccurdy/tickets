@@ -1,4 +1,4 @@
-<%= form_for(ticket, html: { class: 'form-horizontal', id: 'ticket-form', role: 'form' }) do |f| %>
+<%= form_for(ticket, html: { class: 'form-horizontal', role: 'form' }) do |f| %>
 
   <!-- display errors (if needed) -->
   <%= render 'errors', ticket: ticket %>
@@ -25,7 +25,7 @@
     </div>
 
     <!-- two buttons for editing/creating the Ticket, depending on its type -->
-    <div class="form-group" id="submit-buttons">
+    <div class="form-group">
 
       <div class="col-sm-offset-2 col-sm-10">
         <button name="ticket[reason]" value="help" type="submit" class="btn btn-warning">
