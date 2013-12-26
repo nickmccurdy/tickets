@@ -16,5 +16,4 @@ class ApplicationController < ActionController::Base
         password == Tickets::Application.config.password
     end
   end
-
 end

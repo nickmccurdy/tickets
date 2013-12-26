@@ -79,9 +79,7 @@ class TicketsController < ApplicationController
 
   private
 
-  # Use this method to whitelist the permissible parameters. Example:
-  # params.require(:person).permit(:name, :age)
-  # Also, you can specialize this method with per-user checking of permissible attributes.
+  # Never trust parameters from the scary internet, only allow the white list through.
   def ticket_params
     params.require(:ticket).permit(:name, :computer, :reason)
   end

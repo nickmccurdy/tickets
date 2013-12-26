@@ -1,5 +1,4 @@
 Tickets::Application.routes.draw do
-
   post '/' => 'tickets#create'
 
   get '/admin' => 'tickets#index'
