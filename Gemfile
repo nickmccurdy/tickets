@@ -9,6 +9,7 @@ gem 'pg', group: :production
 gem 'sqlite3', group: [:development, :test]
 
 # Gems used for assets
+gem 'haml-rails'
 gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'uglifier'
