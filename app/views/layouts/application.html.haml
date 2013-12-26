@@ -28,9 +28,13 @@
           .pull-right
             = yield :extra_buttons
             - if current_page? '/admin'
-              = link_to 'Home', '/', class: 'btn btn-default'
+              = link_to '/', class: 'btn btn-default' do
+                %span.glyphicon.glyphicon-home
+                Home
             - else
-              = link_to 'Admin', '/admin', class: 'btn btn-default'
+              = link_to '/admin', class: 'btn btn-default' do
+                %span.glyphicon.glyphicon-th-list
+                Admin
 
       / page content
       = yield
