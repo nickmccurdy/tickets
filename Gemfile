@@ -5,12 +5,8 @@ gem 'rails', '4.0.1'
 gem 'thin'
 
 # Database
-group :production do
-	gem 'pg'
-end
-group :development, :test do
-	gem 'sqlite3'
-end
+gem 'pg', group: :production
+gem 'sqlite3', group: [:development, :test]
 
 # Gems used for assets
 gem 'sass-rails'
@@ -29,9 +25,7 @@ end
 gem 'rails_12factor', group: :production
 
 gem 'jquery-rails'
-gem 'browser_details'
 
 gem 'yard'
 gem 'yard-activerecord'
 gem 'redcarpet'
-gem 'simple_form'
