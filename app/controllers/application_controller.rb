@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
   # Ensures that the user is authenticated with the admin user and password.
   def authenticate
     authenticate_or_request_with_http_basic do |username, password|
-      username == CONFIG['username'] && password == CONFIG['password']
+      username == Tickets::Application.config.username &&
+        password == Tickets::Application.config.password
     end
   end
 
