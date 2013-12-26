@@ -19,5 +19,5 @@
   %dt Position
   %dd= @ticket.position
 
-  %dt Elapsed time
-  %dd= distance_of_time_in_words_to_now @ticket.created_at
+  %dt Created
+  %dd #{distance_of_time_in_words_to_now @ticket.created_at} ago
