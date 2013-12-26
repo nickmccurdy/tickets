@@ -13,6 +13,9 @@ gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'uglifier'
 
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
 group :test do
 	gem 'simplecov', require: false
 end
