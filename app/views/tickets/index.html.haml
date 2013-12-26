@@ -1,6 +1,6 @@
 - content_for :title, 'Admin'
 - content_for :extra_buttons do
-  = button_to '/delete_all', method: 'get', class: 'btn btn-danger navbar-btn', html: { 'data-confirm' => 'Are you sure?', rel: 'nofollow'} do
+  = button_to '/delete_all', method: 'get', class: 'btn btn-danger navbar-btn', 'data-confirm' => 'Are you sure?', rel: 'nofollow' do
     %i.glyphicon.glyphicon-remove
     Delete all
 
