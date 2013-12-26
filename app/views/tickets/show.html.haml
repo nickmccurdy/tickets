@@ -16,8 +16,10 @@
   %dt Reason
   %dd= @ticket.reason
 
-  %dt Position
-  %dd= @ticket.position
+  %hr
 
   %dt Created
   %dd #{distance_of_time_in_words_to_now @ticket.created_at} ago
+
+  %dt Position
+  %dd= @ticket.position
