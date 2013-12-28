@@ -11,8 +11,6 @@ class TicketsController < ApplicationController
   # @return [String] the HTML for the Ticket list (which is also the admin page)
   def index
     @tickets = Ticket.all
-
-    respond_with @tickets
   end
 
   # Shows a user's Ticket. If the user does not have a Ticket open, it lets the
@@ -22,9 +20,7 @@ class TicketsController < ApplicationController
   #
   # @return [String] the HTML for the Ticket (or the new Ticket page)
   def show
-    if session[:computer] and @ticket = Ticket.where(computer: session[:computer]).first
-      respond_with @ticket
-    else
+    unless @ticket = Ticket.where(computer: session[:computer]).first
       @ticket = Ticket.new name: session[:name], computer: session[:computer]
       render 'new'
     end
@@ -40,7 +36,7 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new ticket_params
 
-    respond_with @ticket do |format|
+    respond_to do |format|
       if @ticket.save
         session[:name] = @ticket.name
         session[:computer] = @ticket.computer
