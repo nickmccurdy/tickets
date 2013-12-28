@@ -53,12 +53,10 @@ class TicketsController < ApplicationController
   #
   # @return [String] a redirect to the previous page (or / if there were none)
   def destroy
-    begin
-      @ticket = Ticket.find params[:id]
-      @ticket.destroy
-    rescue ActiveRecord::RecordNotFound
-    end
-
+    @ticket = Ticket.find params[:id]
+    @ticket.destroy
+  rescue ActiveRecord::RecordNotFound
+  ensure
     redirect_to(request.referer || '/')
   end
 
