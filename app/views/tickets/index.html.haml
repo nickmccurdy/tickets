@@ -1,8 +1,8 @@
 - content_for :title, 'Admin'
 - content_for :extra_buttons do
-  = button_to '/delete_all', method: 'get', class: 'btn btn-danger', 'data-confirm' => 'Are you sure?', rel: 'nofollow' do
+  = button_to '/destroy_all', method: 'get', class: 'btn btn-danger', 'data-confirm' => 'Are you sure?', rel: 'nofollow' do
     %span.glyphicon.glyphicon-remove
-    Delete all
+    Destroy all
 
 %table.table.table-striped.table-bordered.table-hover.table-condensed
 

@@ -1,6 +1,6 @@
 # Manages Tickets and their public HTML interfaces.
 class TicketsController < ApplicationController
-  before_filter :authenticate, only: [:index, :delete_all]
+  before_filter :authenticate, only: [:index, :destroy_all]
 
   respond_to :html
 
@@ -47,7 +47,7 @@ class TicketsController < ApplicationController
     end
   end
 
-  # Deletes a Ticket from the database (if it's in the database).
+  # Destroys a Ticket from the database (if it's in the database).
   #
   # DELETE /1
   #
@@ -60,12 +60,15 @@ class TicketsController < ApplicationController
     redirect_to(request.referer || '/')
   end
 
-  # Deletes all Tickets from the database. Requires authentication.
+  # Destroys all Tickets from the database. Requires authentication.
   #
-  # GET /delete_all
+  # GET /destroy_all
   #
   # @return [String] a redirect to the previous page (or / if there were none)
-  def delete_all
+  def destroy_all
+    # Note: It is preferred to use delete_all instead of destroy_all here.
+    # destroy_all has to instantiate and destroy every Ticket individually,
+    # which is very expensive.
     Ticket.delete_all
 
     redirect_to(request.referer || '/')

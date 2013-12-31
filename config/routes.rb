@@ -7,7 +7,7 @@ Tickets::Application.routes.draw do
 
   resources :tickets, path: '', except: [:show, :edit, :update] do
     collection do
-      get 'delete_all'
+      get 'destroy_all'
     end
   end
 
