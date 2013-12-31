@@ -40,7 +40,7 @@ class TicketsController < ApplicationController
       if @ticket.save
         session[:name] = @ticket.name
         session[:computer] = @ticket.computer
-        format.html { redirect_to '/' }
+        format.html { redirect_to @ticket }
       else
         format.html { render 'new' }
       end
@@ -57,7 +57,7 @@ class TicketsController < ApplicationController
     @ticket.destroy
   rescue ActiveRecord::RecordNotFound
   ensure
-    redirect_to(request.referer || '/')
+    redirect_to(request.referer || new_ticket_path)
   end
 
   # Destroys all Tickets from the database. Requires authentication.
@@ -71,7 +71,7 @@ class TicketsController < ApplicationController
     # which is very expensive.
     Ticket.delete_all
 
-    redirect_to(request.referer || '/')
+    redirect_to(request.referer || new_ticket_path)
   end
 
   private

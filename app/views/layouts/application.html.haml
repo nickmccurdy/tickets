@@ -27,12 +27,12 @@
           / extra UI buttons for the page
           .pull-right
             = yield :extra_buttons
-            - if current_page? '/admin'
-              = link_to '/', class: 'btn btn-default' do
+            - if current_page? tickets_path
+              = link_to new_ticket_path, class: 'btn btn-default' do
                 %span.glyphicon.glyphicon-home
                 Home
             - else
-              = link_to '/admin', class: 'btn btn-default' do
+              = link_to tickets_path, class: 'btn btn-default' do
                 %span.glyphicon.glyphicon-th-list
                 Admin
 

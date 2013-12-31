@@ -20,7 +20,7 @@ class TicketsControllerTest < ActionController::TestCase
     assert_difference 'Ticket.count' do
       post :create, ticket: { name: 'Fred', computer: 5, reason: 'help' }
     end
-    assert_redirected_to '/'
+    assert_redirected_to ticket_path(assigns(:ticket))
 
     assert_no_difference 'Ticket.count' do
       post :create, ticket: { name: 'Not Fred', computer: 6, reason: 'idk bro' }
@@ -40,12 +40,12 @@ class TicketsControllerTest < ActionController::TestCase
     assert_difference 'Ticket.count', -1 do
       delete :destroy, id: @ticket
     end
-    assert_redirected_to '/'
+    assert_redirected_to new_ticket_path
   end
 
   test 'should destroy all tickets' do
     get :destroy_all
     assert_equal 0, Ticket.count
-    assert_redirected_to '/'
+    assert_redirected_to new_ticket_path
   end
 end
