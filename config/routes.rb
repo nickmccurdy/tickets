@@ -3,9 +3,9 @@ Tickets::Application.routes.draw do
 
   get '/admin' => 'tickets#index'
 
-  root to: 'tickets#show'
+  root 'tickets#show', as: 'ticket'
 
-  resources :tickets, path: '', except: [:show, :edit, :update] do
+  resources :tickets, path: '', except: [:show, :new, :edit, :update] do
     collection do
       get 'destroy_all'
     end

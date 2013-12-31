@@ -28,7 +28,7 @@
           .pull-right
             = yield :extra_buttons
             - if current_page? tickets_path
-              = link_to new_ticket_path, class: 'btn btn-default' do
+              = link_to ticket_path, class: 'btn btn-default' do
                 %span.glyphicon.glyphicon-home
                 Home
             - else

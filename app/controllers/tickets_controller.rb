@@ -57,7 +57,7 @@ class TicketsController < ApplicationController
     @ticket.destroy
   rescue ActiveRecord::RecordNotFound
   ensure
-    redirect_to(request.referer || new_ticket_path)
+    redirect_to(request.referer || ticket_path)
   end
 
   # Destroys all Tickets from the database. Requires authentication.
@@ -71,7 +71,7 @@ class TicketsController < ApplicationController
     # which is very expensive.
     Ticket.delete_all
 
-    redirect_to(request.referer || new_ticket_path)
+    redirect_to(request.referer || ticket_path)
   end
 
   private
