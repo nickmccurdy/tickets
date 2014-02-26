@@ -1,5 +1,5 @@
 # Tickets
-[![Build Status](https://secure.travis-ci.org/thenickperson/tickets.png?branch=master)](http://travis-ci.org/thenickperson/tickets)
+[![Build Status](https://secure.travis-ci.org/nicolasmccurdy/tickets.png?branch=master)](http://travis-ci.org/nicolasmccurdy/tickets)
 [![Dependency Status](https://gemnasium.com/thenickperson/tickets.png)](https://gemnasium.com/thenickperson/tickets) 
 [![Code Climate](https://codeclimate.com/github/thenickperson/tickets.png)](https://codeclimate.com/github/thenickperson/tickets)
 
