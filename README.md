@@ -1,7 +1,7 @@
 # Tickets
 [![Build Status](https://secure.travis-ci.org/nicolasmccurdy/tickets.png?branch=master)](http://travis-ci.org/nicolasmccurdy/tickets)
-[![Dependency Status](https://gemnasium.com/thenickperson/tickets.png)](https://gemnasium.com/thenickperson/tickets) 
-[![Code Climate](https://codeclimate.com/github/thenickperson/tickets.png)](https://codeclimate.com/github/thenickperson/tickets)
+[![Dependency Status](https://gemnasium.com/nicolasmccurdy/tickets.png)](https://gemnasium.com/nicolasmccurdy/tickets) 
+[![Code Climate](https://codeclimate.com/github/nicolasmccurdy/tickets.png)](https://codeclimate.com/github/nicolasmccurdy/tickets)
 
 A simple web app that lets students in computer labs file help tickets for their
 teachers to review.
@@ -16,7 +16,7 @@ Please note that these instructions are for setting up and running an instance o
 
 2. In your terminal, run:
 ```shell
-git clone https://github.com/thenickperson/tickets.git
+git clone https://github.com/nicolasmccurdy/tickets.git
 cd tickets
 bundle install
 rake db:setup
