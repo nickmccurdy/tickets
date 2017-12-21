@@ -1,3 +1,6 @@
+# Deprecated
+Development has stopped and this is no longer supported.
+
 # Tickets
 [![Build Status](https://secure.travis-ci.org/nicolasmccurdy/tickets.png?branch=master)](http://travis-ci.org/nicolasmccurdy/tickets)
 [![Dependency Status](https://gemnasium.com/nicolasmccurdy/tickets.png)](https://gemnasium.com/nicolasmccurdy/tickets) 
