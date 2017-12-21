@@ -9,8 +9,6 @@ Development has stopped and this is no longer supported.
 A simple web app that lets students in computer labs file help tickets for their
 teachers to review.
 
-## [Demo](http://tickets-demo.herokuapp.com/) (experimental)
-
 ## Installation
 
 Please note that these instructions are for setting up and running an instance of Tickets in the development environment, and not for deploying it. Tickets is designed to be deployed to Heroku.
